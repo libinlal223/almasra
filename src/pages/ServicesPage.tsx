@@ -215,7 +215,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                 ALMASRA ENGINEERING CAPABILITIES
               </span>
             </div>
-            <h1 className="font-display-lg text-5xl md:text-6xl text-white font-bold mb-6 tracking-tight">
+            <h1 className="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 tracking-tight break-words">
               Our Core Services
             </h1>
             <p className="font-body-lg text-white/80 max-w-3xl leading-relaxed">

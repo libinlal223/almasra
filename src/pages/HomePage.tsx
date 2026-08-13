@@ -44,10 +44,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <ScrollReveal>
                 <div className="max-w-3xl">
                   <div className="flex items-center gap-2 mb-6">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#E90046]"></div>
+
                     <span className="font-label-caps text-xs text-white/80 uppercase tracking-widest">ALMASRA MEP CONTRACTING</span>
                   </div>
-                  <h1 className="font-display-lg text-6xl md:text-7xl text-white mb-6 leading-[1.1] font-bold">
+                  <h1 className="font-display-lg text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.15] md:leading-[1.1] font-bold break-words">
                     Engineering MEP Excellence in UAE
                   </h1>
                   <p className="font-body-lg text-white/80 mb-10 max-w-2xl leading-relaxed">

@@ -131,7 +131,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                   ALMASRA PROJECT PORTFOLIO
                 </span>
               </div>
-              <h1 className="font-display-lg text-5xl md:text-6xl text-white font-bold mb-4 tracking-tight">
+              <h1 className="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 tracking-tight break-words">
                 Featured Implementations
               </h1>
               <p className="font-body-lg text-white/80 max-w-2xl leading-relaxed">

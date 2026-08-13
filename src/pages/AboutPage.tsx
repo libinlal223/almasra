@@ -51,7 +51,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <p className="font-label-caps text-label-caps text-[#E90046] mb-6 tracking-widest uppercase font-semibold">
                 ABOUT ALMASRA
               </p>
-              <h1 className="font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-8">
+              <h1 className="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-on-surface mb-8 font-bold leading-tight break-words">
                 Engineering Trust Since Day One
               </h1>
               <div className="font-body-lg text-on-surface-variant max-w-2xl border-l-2 border-[#E90046] pl-6 py-2">
