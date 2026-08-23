@@ -9,7 +9,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   const sectorImages = [
     { src: '/commercial.png', label: 'Commercial Infrastructure' },
     { src: '/industrial.png', label: 'Industrial MEP Solutions' },
-    { src: '/luury_villa.png', label: 'Luxury Villa Projects' },
+    { src: '/images/opalgardens1.jpg', label: 'Luxury Villa Projects' },
     { src: '/resedential.png', label: 'Residential Developments' },
   ];
 
@@ -130,7 +130,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <section className="relative z-10 py-section-gap px-margin-edge structural-line-h border-outline-variant">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
             <ScrollReveal delay={0.1}>
-              <div className="border-l-4 border-[#E90046] bg-surface-container-low border border-outline-variant p-8 h-full">
+              <div className="border-l-4 border-[#E90046] bg-surface-container-low border border-outline-variant p-5 sm:p-6 md:p-8 h-full">
                 <h3 className="font-label-caps text-label-caps text-[#E90046] uppercase tracking-widest mb-4">Our Vision</h3>
                 <p className="font-headline-md text-headline-md text-on-surface">
                   "To become the most renowned and preferred electromechanical contractors in the UAE."
@@ -138,7 +138,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.25}>
-              <div className="border-l-4 border-[#E90046] bg-surface-container-low border border-outline-variant p-8 h-full">
+              <div className="border-l-4 border-[#E90046] bg-surface-container-low border border-outline-variant p-5 sm:p-6 md:p-8 h-full">
                 <h3 className="font-label-caps text-label-caps text-[#E90046] uppercase tracking-widest mb-4">Our Mission</h3>
                 <p className="font-headline-md text-headline-md text-on-surface">
                   "To give the best service, supply quality products at competitive prices and meet the needs and demands of our customers."
@@ -241,90 +241,157 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   </h2>
                 </div>
                 <p className="font-body-md text-sm text-on-surface-variant max-w-lg leading-relaxed">
-                  Extending regional MEP execution and specialized contracting across key Emirates through integrated group entities and regional branch networks.
+                  Extending workforce solutions, technical manpower, MEP contracting, and white-collar talent acquisition across key Emirates through integrated group entities.
                 </p>
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-              <div className="lg:col-span-7 bg-white border border-outline-variant p-8 md:p-10 flex flex-col justify-between relative group hover:border-[#E90046] transition-colors shadow-sm">
-                <ScrollReveal delay={0.1}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+              {/* Company 1 */}
+              <ScrollReveal delay={0.1}>
+                <div className="h-full bg-white border border-outline-variant p-5 sm:p-7 md:p-9 flex flex-col justify-between relative group hover:border-[#E90046] transition-all shadow-sm">
                   <div className="absolute top-0 left-0 w-1.5 h-full bg-[#E90046]"></div>
                   <div>
-                    <div className="flex items-center justify-between mb-6 pb-4 border-b border-outline-variant/60">
-                      <span className="font-technical-data text-xs text-[#E90046] font-bold tracking-widest">
-                        01 / PRIMARY ENTITY
+                    <div className="flex items-start justify-between gap-4 mb-6 pb-4 border-b border-outline-variant/60">
+                      <span className="font-technical-data text-xs text-[#E90046] font-bold tracking-widest uppercase">
+                        01 / MANPOWER SUPPLY
                       </span>
-                      <span className="font-technical-data text-xs text-[#64748B] uppercase tracking-wider">
-                        ESTABLISHED GROUP MEMBER
-                      </span>
+                      <div className="h-14 max-w-[150px] p-1.5 bg-slate-50 border border-outline-variant/40 flex items-center justify-center shrink-0">
+                        <img
+                          src="/alfareeq.jpg"
+                          alt="Alfareeq Alnader Technical Services LLC Logo"
+                          className="h-full w-auto object-contain"
+                        />
+                      </div>
                     </div>
-                    <h3 className="font-headline-lg text-2xl md:text-3xl text-on-surface font-bold mb-4 leading-tight tracking-tight">
+                    <h3 className="font-headline-lg text-xl md:text-2xl text-on-surface font-bold mb-3 leading-tight tracking-tight">
                       ALFAREEQ ALNADER TECHNICAL SERVICES LLC
                     </h3>
-                    <p className="font-body-md text-sm text-on-surface-variant max-w-xl leading-relaxed mb-8">
-                      Principal contracting entity executing multi-disciplinary Mechanical, Electrical, and Plumbing (MEP) infrastructure and technical engineering projects.
+                    <p className="font-body-md text-sm text-on-surface-variant leading-relaxed mb-6">
+                      A Manpower Supply and Resource Management Company bridges the gap between organizations needing workforce capacity and qualified personnel seeking employment. It handles the end-to-end process of sourcing, vetting, deploying, and managing human capital for client companies on a temporary, contract, or permanent basis.
                     </p>
                   </div>
-                  <div className="pt-6 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-4 font-technical-data text-xs text-on-surface-variant">
+                  <div className="pt-5 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-4 font-technical-data text-xs text-on-surface-variant">
                     <div className="flex items-center gap-2">
                       <span className="material-symbols-outlined text-xs text-[#E90046]">location_on</span>
                       <span className="font-semibold text-on-surface">Dubai, UAE</span>
                     </div>
-                    <span className="text-[#64748B] uppercase tracking-wider">MEP Contracting &bull; Turnkey Engineering</span>
+                    <span className="text-[#64748B] uppercase tracking-wider font-semibold">Manpower &amp; Resource Management</span>
                   </div>
-                </ScrollReveal>
-              </div>
+                </div>
+              </ScrollReveal>
 
-              <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
-                <ScrollReveal delay={0.2}>
-                  <div className="flex-1 bg-white border border-outline-variant p-6 md:p-7 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between relative group">
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="font-technical-data text-xs text-[#E90046] font-bold">
-                          02 / REGIONAL BRANCH
-                        </span>
-                      </div>
-                      <h3 className="font-headline-md text-lg text-on-surface font-bold mb-2 leading-snug">
-                        ALFAREEQ ALNADER TECHNICAL SERVICES LLC
-                      </h3>
-                      <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                        Dedicated regional operational branch expanding specialized MEP contracting capabilities across Sharjah and the Northern Emirates.
-                      </p>
-                    </div>
-                    <div className="pt-4 mt-4 border-t border-outline-variant/60 flex items-center justify-between font-technical-data text-xs text-on-surface-variant">
-                      <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-xs text-[#E90046]">location_on</span>
-                        <span className="font-medium text-on-surface">Sharjah Branch, UAE</span>
+              {/* Company 2 */}
+              <ScrollReveal delay={0.2}>
+                <div className="h-full bg-white border border-outline-variant p-5 sm:p-7 md:p-9 flex flex-col justify-between relative group hover:border-[#E90046] transition-all shadow-sm">
+                  <div className="absolute top-0 left-0 w-1.5 h-full bg-[#E90046]"></div>
+                  <div>
+                    <div className="flex items-start justify-between gap-4 mb-6 pb-4 border-b border-outline-variant/60">
+                      <span className="font-technical-data text-xs text-[#E90046] font-bold tracking-widest uppercase">
+                        02 / WORKFORCE SOLUTIONS
+                      </span>
+                      <div className="h-14 max-w-[150px] p-1.5 bg-slate-50 border border-outline-variant/40 flex items-center justify-center shrink-0">
+                        <img
+                          src="/bait al mulouck.jpg"
+                          alt="Bait Al Mulouk Technical Services Logo"
+                          className="h-full w-auto object-contain"
+                        />
                       </div>
                     </div>
+                    <h3 className="font-headline-lg text-xl md:text-2xl text-on-surface font-bold mb-3 leading-tight tracking-tight">
+                      BAIT AL MULOUK TECHNICAL SERVICES
+                    </h3>
+                    <p className="font-body-md text-sm text-on-surface-variant leading-relaxed mb-4">
+                      BAIT AL MULOUK TECHNICAL SERVICES is a premier workforce solutions provider specializing in local and international manpower supply. We bridge the talent gap for businesses across diverse sectors by sourcing, vetting, and deploying skilled, semi-skilled, and professional personnel tailored to specific operational requirements.
+                    </p>
+                    <ul className="space-y-2 mb-6 font-body-md text-xs text-on-surface-variant bg-[#f8fafc] p-4 border border-outline-variant/60">
+                      <li className="flex items-start gap-2 leading-relaxed">
+                        <span className="text-[#E90046] font-bold select-none">•</span>
+                        <span>Direct hire, temporary, contract, and flexible staffing solutions for immediate local operational needs.</span>
+                      </li>
+                      <li className="flex items-start gap-2 leading-relaxed">
+                        <span className="text-[#E90046] font-bold select-none">•</span>
+                        <span>End-to-end global sourcing, recruitment, and cross-border placement from established talent hubs.</span>
+                      </li>
+                    </ul>
                   </div>
-                </ScrollReveal>
+                  <div className="pt-5 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-4 font-technical-data text-xs text-on-surface-variant">
+                    <div className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-xs text-[#E90046]">location_on</span>
+                      <span className="font-semibold text-on-surface">Dubai, UAE</span>
+                    </div>
+                    <span className="text-[#64748B] uppercase tracking-wider font-semibold">Local &amp; International Staffing</span>
+                  </div>
+                </div>
+              </ScrollReveal>
 
-                <ScrollReveal delay={0.3}>
-                  <div className="flex-1 bg-white border border-outline-variant p-6 md:p-7 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between relative group">
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="font-technical-data text-xs text-[#E90046] font-bold">
-                          03 / GROUP ASSOCIATE
-                        </span>
-                      </div>
-                      <h3 className="font-headline-md text-lg text-on-surface font-bold mb-2 leading-snug">
-                        BAIT AL MULOUK TECHNICAL SERVICES
-                      </h3>
-                      <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                        Specialized technical services associate delivering targeted electromechanical installations, maintenance, and technical works.
-                      </p>
-                    </div>
-                    <div className="pt-4 mt-4 border-t border-outline-variant/60 flex items-center justify-between font-technical-data text-xs text-on-surface-variant">
-                      <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-xs text-[#E90046]">location_on</span>
-                        <span className="font-medium text-on-surface">Dubai, UAE</span>
+              {/* Company 3 */}
+              <ScrollReveal delay={0.3}>
+                <div className="h-full bg-white border border-outline-variant p-5 sm:p-7 md:p-9 flex flex-col justify-between relative group hover:border-[#E90046] transition-all shadow-sm">
+                  <div className="absolute top-0 left-0 w-1.5 h-full bg-[#E90046]"></div>
+                  <div>
+                    <div className="flex items-start justify-between gap-4 mb-6 pb-4 border-b border-outline-variant/60">
+                      <span className="font-technical-data text-xs text-[#E90046] font-bold tracking-widest uppercase">
+                        03 / REGIONAL BRANCH
+                      </span>
+                      <div className="h-14 max-w-[150px] p-1.5 bg-slate-50 border border-outline-variant/40 flex items-center justify-center shrink-0">
+                        <img
+                          src="/alfareeq.jpg"
+                          alt="Alfareeq Alnader Technical Services LLC Logo"
+                          className="h-full w-auto object-contain"
+                        />
                       </div>
                     </div>
+                    <h3 className="font-headline-lg text-xl md:text-2xl text-on-surface font-bold mb-3 leading-tight tracking-tight">
+                      ALFAREEQ ALNADER TECHNICAL SERVICES LLC
+                    </h3>
+                    <p className="font-body-md text-sm text-on-surface-variant leading-relaxed mb-6">
+                      Your trusted partner for civil and MEP staffing. We provide customized, high-quality skilled and semi-skilled labor to match your exact operational demands.
+                    </p>
                   </div>
-                </ScrollReveal>
-              </div>
+                  <div className="pt-5 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-4 font-technical-data text-xs text-on-surface-variant">
+                    <div className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-xs text-[#E90046]">location_on</span>
+                      <span className="font-semibold text-on-surface">Sharjah Branch, UAE</span>
+                    </div>
+                    <span className="text-[#64748B] uppercase tracking-wider font-semibold">Civil &amp; MEP Staffing</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Company 4 */}
+              <ScrollReveal delay={0.4}>
+                <div className="h-full bg-white border border-outline-variant p-5 sm:p-7 md:p-9 flex flex-col justify-between relative group hover:border-[#E90046] transition-all shadow-sm">
+                  <div className="absolute top-0 left-0 w-1.5 h-full bg-[#E90046]"></div>
+                  <div>
+                    <div className="flex items-start justify-between gap-4 mb-6 pb-4 border-b border-outline-variant/60">
+                      <span className="font-technical-data text-xs text-[#E90046] font-bold tracking-widest uppercase">
+                        04 / HR CONSULTANCY
+                      </span>
+                      <div className="h-14 max-w-[150px] p-1.5 bg-slate-50 border border-outline-variant/40 flex items-center justify-center shrink-0">
+                        <img
+                          src="/staffora.jpg"
+                          alt="Staffora HR Consultancy Logo"
+                          className="h-full w-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                    <h3 className="font-headline-lg text-xl md:text-2xl text-on-surface font-bold mb-3 leading-tight tracking-tight">
+                      STAFFORA HR CONSULTANCY
+                    </h3>
+                    <p className="font-body-md text-sm text-on-surface-variant leading-relaxed mb-6">
+                      &quot;STAFFORA&quot; is an executive search and white-collar talent consultancy dedicated to sourcing, assessing, and placing high-caliber mid-to-senior &amp; Junior professionals, operational specialists, and corporate leaders. We bridge the gap between ambitious enterprises and top-tier talent by providing bespoke recruitment, headhunting and strategic human resource solutions across diverse industry sectors.
+                    </p>
+                  </div>
+                  <div className="pt-5 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-4 font-technical-data text-xs text-on-surface-variant">
+                    <div className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-xs text-[#E90046]">location_on</span>
+                      <span className="font-semibold text-on-surface">Dubai, UAE</span>
+                    </div>
+                    <span className="text-[#64748B] uppercase tracking-wider font-semibold">Executive Search &amp; White-Collar Talent</span>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>

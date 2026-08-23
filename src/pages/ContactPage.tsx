@@ -57,7 +57,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
 
                 {/* Box 1: Address */}
                 <ScrollReveal delay={0.15}>
-                  <div className="bg-white border border-outline-variant p-6 hover:border-[#E90046] transition-colors shadow-sm relative group">
+                  <div className="bg-white border border-outline-variant p-4 sm:p-6 hover:border-[#E90046] transition-colors shadow-sm relative group">
                     <div className="absolute top-0 left-0 w-1 h-full bg-[#E90046]"></div>
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-[#f8fafc] border border-outline-variant flex items-center justify-center text-[#E90046] flex-shrink-0">
@@ -77,7 +77,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
 
                 {/* Box 2: Phone */}
                 <ScrollReveal delay={0.2}>
-                  <div className="bg-white border border-outline-variant p-6 hover:border-[#E90046] transition-colors shadow-sm relative group">
+                  <div className="bg-white border border-outline-variant p-4 sm:p-6 hover:border-[#E90046] transition-colors shadow-sm relative group">
                     <div className="absolute top-0 left-0 w-1 h-full bg-[#E90046]"></div>
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-[#f8fafc] border border-outline-variant flex items-center justify-center text-[#E90046] flex-shrink-0">
@@ -97,7 +97,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
 
                 {/* Box 3: Email & Operating Hours */}
                 <ScrollReveal delay={0.25}>
-                  <div className="bg-white border border-outline-variant p-6 hover:border-[#E90046] transition-colors shadow-sm relative group">
+                  <div className="bg-white border border-outline-variant p-4 sm:p-6 hover:border-[#E90046] transition-colors shadow-sm relative group">
                     <div className="absolute top-0 left-0 w-1 h-full bg-[#E90046]"></div>
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-[#f8fafc] border border-outline-variant flex items-center justify-center text-[#E90046] flex-shrink-0">
@@ -120,7 +120,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
 
                 {/* WhatsApp Action Box */}
                 <ScrollReveal delay={0.3}>
-                  <div className="bg-[#0F172A] text-white border border-outline-variant p-6 shadow-md flex items-center justify-between">
+                  <div className="bg-[#0F172A] text-white border border-outline-variant p-4 sm:p-6 shadow-md flex items-center justify-between">
                     <div>
                       <span className="font-technical-data text-xs text-[#25D366] uppercase tracking-widest font-semibold block mb-1">
                         24/7 DIRECT MESSAGING
@@ -145,7 +145,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
               {/* Right Column (7 Cols): Project Inquiry Box & Structured Form */}
               <div className="lg:col-span-7">
                 <ScrollReveal delay={0.2}>
-                  <div className="bg-white border border-outline-variant p-8 md:p-10 shadow-sm relative">
+                  <div className="bg-white border border-outline-variant p-5 sm:p-8 md:p-10 shadow-sm relative">
                     <div className="absolute top-0 left-0 w-full h-1 bg-[#E90046]"></div>
                     
                     <div className="mb-8 pb-4 border-b border-outline-variant">

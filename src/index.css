@@ -58,7 +58,7 @@
   --font-label-caps: "Inter", sans-serif;
   --font-technical-data: "JetBrains Mono", monospace;
 
-  --spacing-margin-edge: 1.5rem;
+  --spacing-margin-edge: 0.75rem;
   --spacing-gutter: 1.5rem;
   --spacing-section-gap: 5rem;
 }

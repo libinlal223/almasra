@@ -9,6 +9,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const expertiseImages = ['/S1.png', '/S2.png', '/S3.png', '/S4.png'];
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
+  const opalImages = ['/images/opalgardens1.jpg', '/images/opalgardens2.jpg', '/images/opalgardens3.jpg'];
+  const [currentOpalImgIndex, setCurrentOpalImgIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImgIndex((prevIndex) => (prevIndex + 1) % expertiseImages.length);
@@ -16,6 +19,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
     return () => clearInterval(interval);
   }, [expertiseImages.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentOpalImgIndex((prevIndex) => (prevIndex + 1) % opalImages.length);
+    }, 3200);
+
+    return () => clearInterval(interval);
+  }, [opalImages.length]);
 
   return (
     <div className="w-full bg-white">
@@ -84,7 +95,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             <div className="flex flex-col lg:flex-row gap-5">
               {/* Left Card (60%) */}
-              <div className="w-full lg:w-[60%] bg-white p-8 md:p-9 border border-outline-variant relative group grid md:grid-cols-2 gap-6 items-center shadow-sm">
+              <div className="w-full lg:w-[60%] bg-white p-5 sm:p-6 md:p-9 border border-outline-variant relative group grid md:grid-cols-2 gap-6 items-center shadow-sm">
                 <ScrollReveal delay={0.1}>
                   <div className="flex flex-col">
                     <h3 className="font-headline-md text-2xl md:text-3xl text-primary mb-4 mt-1 font-bold">MEP Contracting</h3>
@@ -175,7 +186,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[200px]">
               {/* Commercial Sector */}
-              <div className="bg-surface p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
+              <div className="bg-surface p-5 sm:p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
                   src="/industrial.png"
                   alt="Commercial Sector"
@@ -186,7 +197,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Industrial Sector */}
-              <div className="bg-primary-container text-on-primary-container p-8 border border-outline-variant row-span-1 flex flex-col justify-center relative overflow-hidden group shadow-sm">
+              <div className="bg-primary-container text-on-primary-container p-5 sm:p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-center relative overflow-hidden group shadow-sm">
                 <img
                   src="/commercial.png"
                   alt="Industrial Sector"
@@ -197,9 +208,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Luxury Villas Sector */}
-              <div className="bg-surface p-8 border border-outline-variant row-span-2 flex flex-col justify-start pt-16 relative overflow-hidden group shadow-sm">
+              <div className="bg-surface p-5 sm:p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-start pt-10 md:pt-16 relative overflow-hidden group shadow-sm">
                 <img
-                  src="/luury_villa.png"
+                  src="/images/opalgardens1.jpg"
                   alt="Luxury Villas Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -208,7 +219,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Residential Sector */}
-              <div className="bg-surface-variant p-8 border border-outline-variant row-span-1 flex flex-col justify-center relative overflow-hidden group shadow-sm">
+              <div className="bg-surface-variant p-5 sm:p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-center relative overflow-hidden group shadow-sm">
                 <img
                   src="/resedential.png"
                   alt="Residential Sector"
@@ -269,7 +280,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <ScrollReveal delay={0.1}>
-                <div className="bg-white border border-outline-variant p-6 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between h-full">
+                <div className="bg-white border border-outline-variant p-4.5 sm:p-6 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between h-full">
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <span className="font-technical-data text-xs text-[#E90046] font-bold">01</span>
@@ -290,7 +301,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <div className="bg-white border border-outline-variant p-6 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between h-full">
+                <div className="bg-white border border-outline-variant p-4.5 sm:p-6 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between h-full">
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <span className="font-technical-data text-xs text-[#E90046] font-bold">02</span>
@@ -431,9 +442,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-outline-variant pb-16">
                   <div className="lg:col-span-7 relative group overflow-hidden bg-surface-container-low border border-outline-variant">
                     <img
-                      src="/luury_villa.png"
+                      src="/penthhouse1.jpeg"
                       alt="Cape Hyatt, Mina Al Arab"
-                      className="w-full h-[380px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-[260px] sm:h-[340px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4 bg-[#0F172A]/90 text-white px-3 py-1 font-technical-data text-xs font-semibold tracking-widest border border-white/10">
                       01 / 03
@@ -497,7 +508,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     <img
                       src="/resedential.png"
                       alt="Jebel Ali Village, Dubai"
-                      className="w-full h-[380px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-[260px] sm:h-[340px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4 bg-[#0F172A]/90 text-white px-3 py-1 font-technical-data text-xs font-semibold tracking-widest border border-white/10">
                       02 / 03
@@ -506,17 +517,34 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </div>
               </ScrollReveal>
 
-              {/* Project 03 */}
+              {/* Project 03 - Opal Gardens */}
               <ScrollReveal>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                  <div className="lg:col-span-7 relative group overflow-hidden bg-surface-container-low border border-outline-variant">
-                    <img
-                      src="/luury_villa.png"
-                      alt="Opal Gardens, District 11, Dubai"
-                      className="w-full h-[380px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4 bg-[#0F172A]/90 text-white px-3 py-1 font-technical-data text-xs font-semibold tracking-widest border border-white/10">
+                  <div className="lg:col-span-7 relative group overflow-hidden bg-surface-container-low border border-outline-variant h-[260px] sm:h-[340px] md:h-[440px]">
+                    {opalImages.map((imgSrc, index) => (
+                      <img
+                        key={imgSrc}
+                        src={imgSrc}
+                        alt={`Opal Gardens, District 11, Dubai - View ${index + 1}`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                          index === currentOpalImgIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        }`}
+                      />
+                    ))}
+                    <div className="absolute top-4 left-4 bg-[#0F172A]/90 text-white px-3 py-1 font-technical-data text-xs font-semibold tracking-widest border border-white/10 z-20">
                       03 / 03
+                    </div>
+                    <div className="absolute bottom-3 right-3 z-20 flex gap-1.5 bg-black/50 px-2 py-1 backdrop-blur-sm">
+                      {opalImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentOpalImgIndex(index)}
+                          aria-label={`Select slide ${index + 1}`}
+                          className={`h-1.5 transition-all duration-300 cursor-pointer ${
+                            index === currentOpalImgIndex ? 'w-4 bg-[#E90046]' : 'w-1.5 bg-white/60'
+                          }`}
+                        />
+                      ))}
                     </div>
                   </div>
                   <div className="lg:col-span-5 flex flex-col justify-center">

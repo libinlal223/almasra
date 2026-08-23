@@ -114,7 +114,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
           location: 'District 11, Dubai',
           developer: 'Meydan',
           type: 'Luxury Villa Plumbing & Booster Systems',
-          image: '/luury_villa.png',
+          image: '/images/opalgardens1.jpg',
         },
         {
           name: 'Al Madaen Commercial Tower',
@@ -177,7 +177,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
           location: 'District 11, Dubai',
           developer: 'Meydan',
           type: 'Smart VRF Climate Control',
-          image: '/luury_villa.png',
+          image: '/images/opalgardens2.jpg',
         },
       ],
     },
@@ -344,7 +344,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start transition-opacity duration-500">
               
               {/* Left Side: Scope of Work Checklist (5 Cols) */}
-              <div className="lg:col-span-5 bg-[#f8fafc] border border-outline-variant p-8 relative shadow-sm">
+              <div className="lg:col-span-5 bg-[#f8fafc] border border-outline-variant p-5 sm:p-6 md:p-8 relative shadow-sm">
                 <div className="absolute top-0 left-0 w-1 h-full bg-[#E90046]"></div>
                 <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-widest font-semibold block mb-2">
                   {activeScope.tag}
@@ -382,7 +382,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                   {activeScope.completedProjects.map((project, idx) => (
                     <div 
                       key={idx}
-                      className="bg-white border border-outline-variant p-5 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between group"
+                      className="bg-white border border-outline-variant p-4 sm:p-5 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between group"
                     >
                       <div className="relative aspect-[16/10] overflow-hidden border border-outline-variant/60 mb-4 bg-surface-container-low">
                         <img 

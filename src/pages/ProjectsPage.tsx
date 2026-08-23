@@ -17,7 +17,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
       category: 'Residential',
       location: 'Mina Al Arab, Ras Al Khaimah',
       developer: 'RAK Properties',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC2j1mFSBb0jAdZQGEaR54Uu9ujp0MxElOvFRnfzrJlZQmtaNUdfouhlkWcsxKTBieQdjNkLeG-bcWthDFqtaVWcFLYJa5laoeH9sFcHzbQ0OSKJElEh3yPfo-8ObRR7DTdJ3KCaiJM81dkL1UTwd6lQDJW-IdcIIcxrJvmCYQciKgpUS6Jno695Afop1Ax6m5vrO0KulpijGBw609_us1E-FEzETXn2dJha3rOtVvEaIauyr6mIpjNNw',
+      image: '/penthhouse1.jpeg',
       aspect: 'aspect-[16/11]',
       badge: 'RAK Properties | MEP Infrastructure'
     },
@@ -37,7 +37,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
       category: 'Residential',
       location: 'District 11, Dubai',
       developer: 'Meydan',
-      image: '/luury_villa.png',
+      image: '/images/opalgardens1.jpg',
       aspect: 'aspect-[4/5]',
       badge: 'Meydan | Luxury Villa MEP'
     },
@@ -161,7 +161,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
         </section>
 
         {/* Dynamic Architectural Masonry Layout */}
-        <section className="px-4 md:px-margin-edge py-16 max-w-[1440px] mx-auto">
+        <section className="px-margin-edge py-16 max-w-[1440px] mx-auto">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {filteredProjects.map((project, idx) => (
               <ScrollReveal key={project.id} delay={(idx % 3) * 0.1}>
@@ -179,7 +179,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                     </div>
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <span className="font-technical-data text-xs text-[#E90046] font-bold block mb-1">
                       {project.badge}
                     </span>

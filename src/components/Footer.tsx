@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
   return (
     <footer className="bg-[#0F172A] text-white relative h-fit overflow-hidden border-t border-outline-variant mt-auto">
-      <div className="max-w-[1440px] mx-auto p-10 md:p-14 z-40 relative">
+      <div className="max-w-[1440px] mx-auto p-5 sm:p-8 md:p-14 z-40 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 lg:gap-12 pb-10">
           
           {/* Brand section */}
