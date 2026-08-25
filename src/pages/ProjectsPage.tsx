@@ -17,7 +17,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
       category: 'Residential',
       location: 'Mina Al Arab, Ras Al Khaimah',
       developer: 'RAK Properties',
-      image: '/penthhouse1.jpeg',
+      image: '/images/rakprop.png',
       aspect: 'aspect-[16/11]',
       badge: 'RAK Properties | MEP Infrastructure'
     },
@@ -27,7 +27,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
       category: 'Residential',
       location: 'Jebel Ali, Dubai',
       developer: 'Nakheel',
-      image: '/resedential.png',
+      image: '/images/luxury townhouse.png',
       aspect: 'aspect-[3/4]',
       badge: 'Nakheel | Townhouse MEP'
     },

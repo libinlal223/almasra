@@ -9,7 +9,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const expertiseImages = ['/S1.png', '/S2.png', '/S3.png', '/S4.png'];
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
-  const opalImages = ['/images/opalgardens1.jpg', '/images/opalgardens2.jpg', '/images/opalgardens3.jpg'];
+  const opalImages = ['/images/opalgardens1.jpg', '/images/opalgardens2.jpg', '/images/opalgardens3.png'];
   const [currentOpalImgIndex, setCurrentOpalImgIndex] = useState(0);
 
   useEffect(() => {
@@ -177,7 +177,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
         </section>
 
-        {/* 3. Sector Expertise (Clean, Original Grid View without ScrollReveal) */}
+        {/* 3. Sector Expertise (Clean Grid View) */}
         <section className="w-full border-b border-outline-variant bg-[#f8fafc]">
           <div className="max-w-[1440px] mx-auto px-margin-edge py-16">
             <div className="mb-12">
@@ -186,47 +186,59 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[200px]">
               {/* Commercial Sector */}
-              <div className="bg-surface p-5 sm:p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
+              <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/industrial.png"
+                  src="/images/commercial1.png"
                   alt="Commercial Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-0"></div>
-                <h3 className="font-headline-md text-3xl text-on-surface relative z-10 text-white font-bold">Commercial</h3>
+                <div className="relative z-10">
+                  <h3 className="font-headline-md text-3xl text-white font-bold mb-1">Commercial</h3>
+                  <p className="font-body-md text-xs text-white/80">Office Towers, Retail Malls &amp; Corporate Facilities</p>
+                </div>
               </div>
 
               {/* Industrial Sector */}
-              <div className="bg-primary-container text-on-primary-container p-5 sm:p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-center relative overflow-hidden group shadow-sm">
+              <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/commercial.png"
+                  src="/images/industrial2.png"
                   alt="Industrial Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-0"></div>
-                <h3 className="font-headline-md text-2xl relative z-10 text-white font-bold">Industrial</h3>
+                <div className="relative z-10">
+                  <h3 className="font-headline-md text-2xl text-white font-bold mb-1">Industrial</h3>
+                  <p className="font-body-md text-xs text-white/80">Warehouses, Factories &amp; Heavy Plants</p>
+                </div>
               </div>
 
               {/* Luxury Villas Sector */}
-              <div className="bg-surface p-5 sm:p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-start pt-10 md:pt-16 relative overflow-hidden group shadow-sm">
+              <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/images/opalgardens1.jpg"
+                  src="/images/rakprop.png"
                   alt="Luxury Villas Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-0"></div>
-                <h3 className="font-headline-md text-3xl text-on-surface mb-4 relative z-10 text-white font-bold">Luxury Villas</h3>
+                <div className="relative z-10">
+                  <h3 className="font-headline-md text-3xl text-white font-bold mb-1">Luxury Villas</h3>
+                  <p className="font-body-md text-xs text-white/80">Custom High-End Estates &amp; Private Residences</p>
+                </div>
               </div>
 
               {/* Residential Sector */}
-              <div className="bg-surface-variant p-5 sm:p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-center relative overflow-hidden group shadow-sm">
+              <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/resedential.png"
+                  src="/images/luxury townhouse.png"
                   alt="Residential Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-0"></div>
-                <h3 className="font-headline-md text-2xl text-on-surface relative z-10 text-white font-bold">Residential</h3>
+                <div className="relative z-10">
+                  <h3 className="font-headline-md text-2xl text-white font-bold mb-1">Residential</h3>
+                  <p className="font-body-md text-xs text-white/80">Townhouses &amp; Apartment Complexes</p>
+                </div>
               </div>
             </div>
           </div>
@@ -246,9 +258,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
               <div className="w-full lg:w-[35%] flex flex-col justify-center">
                 <div className="font-technical-data text-label-caps text-[#E90046] uppercase tracking-[0.2em] mb-4">ENGINEERING AUTHORITY</div>
-                <h2 className="font-headline-md text-headline-md text-white mb-6">WHY ALMASRA?</h2>
+                <h2 className="font-headline-md text-headline-md text-white mb-6">WHY ALMASRA ?</h2>
                 <p className="font-body-lg text-inverse-on-surface opacity-70 mb-8">
-                  We combine experienced engineers, skilled technicians, strict safety standards, and timely project execution to deliver dependable MEP solutions for projects across the UAE.
+                  We combine experienced engineers, skilled technicians, strict safety standards and timely project execution to deliver dependable MEP solutions for projects across the UAE.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="h-[1px] w-12 bg-[#E90046]"></div>
@@ -442,7 +454,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-outline-variant pb-16">
                   <div className="lg:col-span-7 relative group overflow-hidden bg-surface-container-low border border-outline-variant">
                     <img
-                      src="/penthhouse1.jpeg"
+                      src="/images/rakprop.png"
                       alt="Cape Hyatt, Mina Al Arab"
                       className="w-full h-[260px] sm:h-[340px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -506,7 +518,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   </div>
                   <div className="lg:col-span-7 order-1 lg:order-2 relative group overflow-hidden bg-surface-container-low border border-outline-variant">
                     <img
-                      src="/resedential.png"
+                      src="/images/luxury townhouse.png"
                       alt="Jebel Ali Village, Dubai"
                       className="w-full h-[260px] sm:h-[340px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -526,9 +538,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                         key={imgSrc}
                         src={imgSrc}
                         alt={`Opal Gardens, District 11, Dubai - View ${index + 1}`}
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
-                          index === currentOpalImgIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                        }`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${index === currentOpalImgIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                          }`}
                       />
                     ))}
                     <div className="absolute top-4 left-4 bg-[#0F172A]/90 text-white px-3 py-1 font-technical-data text-xs font-semibold tracking-widest border border-white/10 z-20">
@@ -540,9 +551,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                           key={index}
                           onClick={() => setCurrentOpalImgIndex(index)}
                           aria-label={`Select slide ${index + 1}`}
-                          className={`h-1.5 transition-all duration-300 cursor-pointer ${
-                            index === currentOpalImgIndex ? 'w-4 bg-[#E90046]' : 'w-1.5 bg-white/60'
-                          }`}
+                          className={`h-1.5 transition-all duration-300 cursor-pointer ${index === currentOpalImgIndex ? 'w-4 bg-[#E90046]' : 'w-1.5 bg-white/60'
+                            }`}
                         />
                       ))}
                     </div>
