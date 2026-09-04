@@ -100,7 +100,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <div className="flex flex-col">
                     <h3 className="font-headline-md text-2xl md:text-3xl text-primary mb-4 mt-1 font-bold">MEP Contracting</h3>
                     <p className="font-body-md text-sm md:text-base text-on-surface-variant max-w-lg mb-5 leading-relaxed">
-                      Complete Mechanical, Electrical &amp; Plumbing contracting solutions for commercial, residential, industrial, and healthcare developments across the UAE.
+                      Complete Mechanical, Electrical &amp; Plumbing contracting solutions for commercial, residential, industrial and healthcare developments across the UAE.
                     </p>
                     <div className="w-12 h-1 bg-[#E90046] mb-5 transition-all group-hover:w-24"></div>
                     <a
@@ -113,12 +113,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </ScrollReveal>
 
                 {/* Animated Image Slideshow */}
-                <div className="h-full min-h-[250px] relative overflow-hidden bg-surface-container-low">
+                <div className="h-full min-h-[280px] relative overflow-hidden bg-white p-2 border border-outline-variant/40">
                   {expertiseImages.map((imgSrc, index) => (
                     <img
                       key={imgSrc}
                       alt={`MEP Engineering Showcase ${index + 1}`}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${index === currentImgIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                      className={`absolute inset-0 w-full h-full object-contain object-bottom p-2 transition-opacity duration-700 ease-in-out ${index === currentImgIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
                       src={imgSrc}
                     />

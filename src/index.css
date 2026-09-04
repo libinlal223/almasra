@@ -58,20 +58,28 @@
   --font-label-caps: "Inter", sans-serif;
   --font-technical-data: "JetBrains Mono", monospace;
 
-  --spacing-margin-edge: 0.75rem;
+  --spacing-margin-edge: 1rem;
   --spacing-gutter: 1.5rem;
   --spacing-section-gap: 5rem;
 }
 
+/* Explicit Responsive Margin-Edge Utility */
+.px-margin-edge {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 @media (min-width: 768px) {
-  @theme {
-    --spacing-margin-edge: 3rem;
+  .px-margin-edge {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media (min-width: 1280px) {
-  @theme {
-    --spacing-margin-edge: 5rem;
+  .px-margin-edge {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 

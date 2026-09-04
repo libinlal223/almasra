@@ -228,7 +228,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
         <section className="w-full py-12 px-margin-edge bg-[#f8fafc] border-b border-outline-variant">
           <div className="max-w-[1440px] mx-auto relative">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-              
+
               {/* Left Column: All Service Text Blocks (7 Cols) */}
               <div className="lg:col-span-7 flex flex-col">
                 {servicesList.map((service, index) => (
@@ -265,11 +265,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
 
                     {/* Mobile Inline Image */}
                     <div className="block lg:hidden mt-8">
-                      <div className="relative overflow-hidden bg-surface-container-low border border-outline-variant shadow-md aspect-[4/3] w-full">
+                      <div className="relative overflow-hidden bg-white border border-outline-variant shadow-sm aspect-[4/3] w-full p-2">
                         <img
                           src={service.image}
                           alt={service.alt}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain object-center"
                         />
                       </div>
                     </div>
@@ -279,15 +279,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
 
               {/* Right Column: Sticky Pinned Image Frame (5 Cols) */}
               <div className="hidden lg:block lg:col-span-5 sticky top-[calc(50vh-240px)] self-start py-6">
-                <div className="relative group overflow-hidden bg-surface-container-low border border-outline-variant shadow-xl aspect-[1/1.12] h-[480px] w-full">
+                <div className="relative group overflow-hidden bg-white border border-outline-variant shadow-lg aspect-[1/1.12] h-[480px] w-full p-4">
                   {servicesList.map((service, index) => (
                     <img
                       key={service.id}
                       src={service.image}
                       alt={service.alt}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
-                        index === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                      }`}
+                      className={`absolute inset-0 w-full h-full object-contain object-center p-4 transition-opacity duration-700 ease-in-out ${index === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        }`}
                     />
                   ))}
 
@@ -328,11 +327,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveScopeTab(idx)}
-                  className={`px-5 py-3 font-technical-data text-xs md:text-sm uppercase tracking-wider transition-all cursor-pointer border ${
-                    activeScopeTab === idx
+                  className={`px-5 py-3 font-technical-data text-xs md:text-sm uppercase tracking-wider transition-all cursor-pointer border ${activeScopeTab === idx
                       ? 'bg-[#0F172A] text-white border-[#0F172A] font-semibold shadow-md'
                       : 'bg-[#f8fafc] text-on-surface-variant border-outline-variant hover:border-[#E90046] hover:text-[#0F172A]'
-                  }`}
+                    }`}
                 >
                   <span className="text-[#E90046] mr-2 font-bold">{tab.tag.split(' ')[0]}</span>
                   {tab.name}
@@ -342,7 +340,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
 
             {/* Active Service Showcase Content */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start transition-opacity duration-500">
-              
+
               {/* Left Side: Scope of Work Checklist (5 Cols) */}
               <div className="lg:col-span-5 bg-[#f8fafc] border border-outline-variant p-5 sm:p-6 md:p-8 relative shadow-sm">
                 <div className="absolute top-0 left-0 w-1 h-full bg-[#E90046]"></div>
@@ -380,13 +378,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {activeScope.completedProjects.map((project, idx) => (
-                    <div 
+                    <div
                       key={idx}
                       className="bg-white border border-outline-variant p-4 sm:p-5 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between group"
                     >
                       <div className="relative aspect-[16/10] overflow-hidden border border-outline-variant/60 mb-4 bg-surface-container-low">
-                        <img 
-                          src={project.image} 
+                        <img
+                          src={project.image}
                           alt={project.name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />

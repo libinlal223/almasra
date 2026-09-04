@@ -135,7 +135,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                 Featured Implementations
               </h1>
               <p className="font-body-lg text-white/80 max-w-2xl leading-relaxed">
-                A curated engineering record of verified MEP contracting projects delivered across the UAE with precision, safety, and operational excellence.
+                A curated engineering record of verified MEP contracting projects delivered across the UAE with precision, safety and operational excellence.
               </p>
             </ScrollReveal>
           </div>
@@ -211,7 +211,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                   Have a New Project to Engineer?
                 </h3>
                 <p className="font-body-lg text-white/80 leading-relaxed">
-                  Connect with Almasra Technical Services to discuss custom MEP contracting, authority approvals, and project timelines.
+                  Connect with Almasra Technical Services to discuss custom MEP contracting, authority approvals and project timelines.
                 </p>
               </div>
             </ScrollReveal>

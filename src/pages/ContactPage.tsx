@@ -31,7 +31,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                 Let's Build Your Next Project
               </h1>
               <p className="font-body-lg text-white/80 max-w-3xl leading-relaxed">
-                Whether you're planning a commercial development, luxury villa, industrial facility, or healthcare project, our engineering team is ready to deliver reliable Mechanical, Electrical, and Plumbing solutions tailored to your requirements.
+                Whether you're planning a commercial development, luxury villa, industrial facility or healthcare project, our engineering team is ready to deliver reliable Mechanical, Electrical and Plumbing solutions tailored to your requirements.
               </p>
             </ScrollReveal>
           </div>
@@ -238,7 +238,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                           </label>
                           <textarea 
                             className="bg-[#f8fafc] border border-outline-variant p-4 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors h-36 resize-none" 
-                            placeholder="Provide details regarding project location, capacity, timeline, and technical constraints..."
+                            placeholder="Provide details regarding project location, capacity, timeline and technical constraints..."
                           ></textarea>
                         </div>
 
