@@ -14,13 +14,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
   const handleNavClick = (e: React.MouseEvent, page: string) => {
     e.preventDefault();
-    if (page === 'contact') {
-      setIsContactModalOpen(true);
-      setMobileMenuOpen(false);
-    } else {
-      onNavigate(page);
-      setMobileMenuOpen(false);
-    }
+    onNavigate(page);
+    setMobileMenuOpen(false);
   };
 
   const navLinks = [
