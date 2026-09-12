@@ -9,8 +9,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   const sectorImages = [
     { src: '/commercial.png', label: 'Commercial Infrastructure' },
     { src: '/images/industrial2.png', label: 'Industrial MEP Solutions' },
-    { src: '/resedential.png', label: 'Residential Developments' },
-    { src: '/luury_villa.png', label: 'Luxury Villa Projects' },
+    { src: '/images/resedential/resedential.png', label: 'Residential Developments' },
+    { src: '/images/resedential/luury_villa.png', label: 'Luxury Villa Projects' },
   ];
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);

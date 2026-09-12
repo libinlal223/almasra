@@ -9,7 +9,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const expertiseImages = ['/S1.png', '/S2.png', '/S3.png', '/S4.png'];
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
-  const opalImages = ['/images/opalgardens1.jpg', '/images/opalgardens2.jpg', '/images/opalgardens3.png'];
+  const opalImages = [
+    '/images/opalgardens1.jpg',
+    '/images/opalgardens2.jpg',
+    '/images/opalgardens3.png',
+  ];
   const [currentOpalImgIndex, setCurrentOpalImgIndex] = useState(0);
 
   useEffect(() => {
@@ -216,7 +220,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Luxury Villas Sector */}
               <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/images/rakprop.png"
+                  src="/images/all/2.png"
                   alt="Luxury Villas Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -230,7 +234,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Residential Sector */}
               <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/images/luxury townhouse.png"
+                  src="/images/all/10.png"
                   alt="Residential Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -454,7 +458,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-outline-variant pb-16">
                   <div className="lg:col-span-7 relative group overflow-hidden bg-surface-container-low border border-outline-variant">
                     <img
-                      src="/images/rakprop.png"
+                      src="/images/all/rakprop.png"
                       alt="Cape Hyatt, Mina Al Arab"
                       className="w-full h-[260px] sm:h-[340px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -518,7 +522,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   </div>
                   <div className="lg:col-span-7 order-1 lg:order-2 relative group overflow-hidden bg-surface-container-low border border-outline-variant">
                     <img
-                      src="/images/luxury townhouse.png"
+                      src="/images/all/2.png"
                       alt="Jebel Ali Village, Dubai"
                       className="w-full h-[260px] sm:h-[340px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />

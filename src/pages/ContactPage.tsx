@@ -41,7 +41,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
         <section className="w-full py-16 px-margin-edge bg-[#f8fafc] bg-[linear-gradient(to_right,rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.03)_1px,transparent_1px)] [background-size:24px_24px]">
           <div className="max-w-[1440px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-              
+
               {/* Left Column (5 Cols): Office Details & Contact Cards */}
               <div className="lg:col-span-5 flex flex-col gap-6">
                 <ScrollReveal delay={0.1}>
@@ -87,9 +87,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                         <span className="font-technical-data text-xs text-[#64748B] uppercase tracking-wider block mb-1 font-semibold">
                           PHONE / TELEPHONE
                         </span>
-                        <p className="font-technical-data text-sm md:text-base text-[#0F172A] font-semibold">
-                          +971 (0) 4 123 4567 <br /> +971 (0) 50 123 4567
-                        </p>
+                        <div className="font-technical-data text-sm md:text-base text-[#0F172A] font-semibold space-y-1">
+                          <p><a href="tel:+9715627777400" className="hover:text-[#E90046] transition-colors">+971 56 277 7400</a></p>
+                          <p><a href="tel:+9715677773100" className="hover:text-[#E90046] transition-colors">+971 56 777 3100</a></p>
+                          <p><a href="tel:+971565454332" className="hover:text-[#E90046] transition-colors">+971 56 545 4332</a></p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -110,9 +112,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                         <p className="font-technical-data text-sm text-[#0F172A] font-semibold mb-2">
                           info.almasra@gmail.com
                         </p>
-                        <p className="font-body-md text-xs text-[#64748B]">
-                          Mon - Fri: 8:00 AM - 6:00 PM
-                        </p>
+
                       </div>
                     </div>
                   </div>
@@ -128,9 +128,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                       <h3 className="font-headline-md text-lg font-bold text-white">
                         Instant WhatsApp Support
                       </h3>
+                      <p className="font-technical-data text-xs text-[#25D366] mt-0.5">+971 56 545 4332</p>
                     </div>
                     <a
-                      href="https://wa.me/971501234567"
+                      href="https://wa.me/971565454332"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-[#25D366] text-white font-label-caps px-6 py-3 uppercase tracking-widest hover:bg-[#1DA851] transition-colors flex items-center gap-2 cursor-pointer shadow-md font-semibold text-xs whitespace-nowrap"
@@ -147,7 +148,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                 <ScrollReveal delay={0.2}>
                   <div className="bg-white border border-outline-variant p-5 sm:p-8 md:p-10 shadow-sm relative">
                     <div className="absolute top-0 left-0 w-full h-1 bg-[#E90046]"></div>
-                    
+
                     <div className="mb-8 pb-4 border-b border-outline-variant">
                       <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-widest font-semibold block mb-1">
                         PROJECT INQUIRY FORM
@@ -174,21 +175,21 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                             <label className="font-technical-data text-xs text-[#475569] uppercase font-semibold mb-2">
                               Your Name <span className="text-[#E90046]">*</span>
                             </label>
-                            <input 
-                              className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors" 
-                              placeholder="Enter your full name" 
-                              type="text" 
-                              required 
+                            <input
+                              className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors"
+                              placeholder="Enter your full name"
+                              type="text"
+                              required
                             />
                           </div>
                           <div className="flex flex-col">
                             <label className="font-technical-data text-xs text-[#475569] uppercase font-semibold mb-2">
                               Company / Organization
                             </label>
-                            <input 
-                              className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors" 
-                              placeholder="Enter company name" 
-                              type="text" 
+                            <input
+                              className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors"
+                              placeholder="Enter company name"
+                              type="text"
                             />
                           </div>
                         </div>
@@ -198,22 +199,22 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                             <label className="font-technical-data text-xs text-[#475569] uppercase font-semibold mb-2">
                               Contact Number <span className="text-[#E90046]">*</span>
                             </label>
-                            <input 
-                              className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors font-technical-data" 
-                              placeholder="+971 -- --- ----" 
-                              type="tel" 
-                              required 
+                            <input
+                              className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors font-technical-data"
+                              placeholder="+971 -- --- ----"
+                              type="tel"
+                              required
                             />
                           </div>
                           <div className="flex flex-col">
                             <label className="font-technical-data text-xs text-[#475569] uppercase font-semibold mb-2">
                               Email Address <span className="text-[#E90046]">*</span>
                             </label>
-                            <input 
-                              className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors font-technical-data" 
-                              placeholder="email@domain.com" 
-                              type="email" 
-                              required 
+                            <input
+                              className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors font-technical-data"
+                              placeholder="email@domain.com"
+                              type="email"
+                              required
                             />
                           </div>
                         </div>
@@ -236,8 +237,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                           <label className="font-technical-data text-xs text-[#475569] uppercase font-semibold mb-2">
                             Project Scope / Specifications
                           </label>
-                          <textarea 
-                            className="bg-[#f8fafc] border border-outline-variant p-4 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors h-36 resize-none" 
+                          <textarea
+                            className="bg-[#f8fafc] border border-outline-variant p-4 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors h-36 resize-none"
                             placeholder="Provide details regarding project location, capacity, timeline and technical constraints..."
                           ></textarea>
                         </div>
@@ -303,16 +304,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 font-technical-data text-xs">
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-[#E90046] text-sm">call</span>
-            <span>+971 (0) 4 123 4567</span>
+            <span>+971 56 277 7400 &bull; +971 56 777 3100 &bull; +971 56 545 4332</span>
           </div>
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-[#E90046] text-sm">mail</span>
             <span>info.almasra@gmail.com</span>
           </div>
-          <div className="flex items-center gap-3 text-[#25D366] font-semibold">
+          <a href="https://wa.me/971565454332" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-semibold hover:underline">
             <span className="material-symbols-outlined text-sm">forum</span>
-            <span>WhatsApp Direct Support</span>
-          </div>
+            <span>WhatsApp: +971 56 545 4332</span>
+          </a>
         </div>
       </div>
     </div>

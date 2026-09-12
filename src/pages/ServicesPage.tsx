@@ -6,7 +6,6 @@ interface ServicesPageProps {
 
 export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeScopeTab, setActiveScopeTab] = useState(0);
   const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const servicesList = [
@@ -68,120 +67,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
     },
   ];
 
-  const scopeDetails = [
-    {
-      id: '01',
-      name: 'Electrical Services',
-      tag: '01 ELECTRICAL',
-      scopeItems: [
-        'High & Low Voltage Power Distribution (MDB, SMDB & DB Panel Assemblies)',
-        'Indoor & Outdoor Architectural, Task & Security Lighting Systems',
-        'Cable Trays, Trunking, Ladder Containment & Busbar Riser Systems',
-        'Earthing, Lightning Protection & Surge Suppression Installations',
-        'DEWA / SEWA / ADDC Authority Approvals, Load Audit, Testing & Commissioning',
-      ],
-      completedProjects: [
-        {
-          name: 'Cape Hyatt Luxury Residences',
-          location: 'Mina Al Arab, Ras Al Khaimah',
-          developer: 'RAK Properties',
-          type: 'Residential MEP & Power Distribution',
-          image: '/images/rakprop.png',
-        },
-        {
-          name: 'Jebel Ali Village Community',
-          location: 'Jebel Ali, Dubai',
-          developer: 'Nakheel',
-          type: 'Townhouse Electrical Infrastructure',
-          image: '/images/luxury townhouse.png',
-        },
-      ],
-    },
-    {
-      id: '02',
-      name: 'Plumbing Services',
-      tag: '02 PLUMBING',
-      scopeItems: [
-        'Domestic Cold & Hot Water Distribution Networks (PPR, PEX & HDPE Piping)',
-        'Sanitary Soil, Waste, Vent & Rainwater Drainage Piping Infrastructure',
-        'Hydro-Pneumatic Water Booster & Transfer Pump Room Assemblies',
-        'Central Water Filtration, Softening & Solar Water Heating Systems',
-        'Authority Inspections, Hydrostatic Pressure Testing & Water Chlorination',
-      ],
-      completedProjects: [
-        {
-          name: 'Opal Gardens Villa Estate',
-          location: 'District 11, Dubai',
-          developer: 'Meydan',
-          type: 'Luxury Villa Plumbing & Booster Systems',
-          image: '/images/opalgardens1.jpg',
-        },
-        {
-          name: 'Al Madaen Commercial Tower',
-          location: 'Sharjah, UAE',
-          developer: 'Private Developer',
-          type: 'Commercial Plumbing & Drainage Network',
-          image: '/commercial.png',
-        },
-      ],
-    },
-    {
-      id: '03',
-      name: 'Fire & Low Current',
-      tag: '03 FIRE & LOW CURRENT',
-      scopeItems: [
-        'Civil Defence Approved Addressable Fire Alarm & Voice Evacuation Networks',
-        'Automatic Wet/Dry Pipe Fire Sprinklers & Fire Hose Reel Stations',
-        'Clean Agent Gas Suppression (FM200 / Novec) for IT Server Rooms',
-        'CCTV Security Surveillance, Access Control & Automatic Gate Barriers',
-        'Building Management Systems (BMS) & Central Emergency Battery Systems',
-      ],
-      completedProjects: [
-        {
-          name: 'Dubai Logistics Hub Facility',
-          location: 'Dubai South, UAE',
-          developer: 'Industrial Zone',
-          type: 'Fire Suppression & Alarm Systems',
-          image: '/industrial.png',
-        },
-        {
-          name: 'Cape Hyatt Towers',
-          location: 'Mina Al Arab, RAK',
-          developer: 'RAK Properties',
-          type: 'BMS, Fire Safety & Low Current Integration',
-          image: '/images/rakprop.png',
-        },
-      ],
-    },
-    {
-      id: '04',
-      name: 'HVAC Solutions',
-      tag: '04 HVAC',
-      scopeItems: [
-        'Central Chilled Water Plants, FAHU & AHU Air Handling Installations',
-        'Galvanized Iron (GI) & Pre-Insulated (PI) Ductwork Fabrication & Installation',
-        'VRF / VRV Smart Inverter Multi-Split Air Conditioning Systems',
-        'Commercial Kitchen Ventilation, Ecology Units & Smoke Extract Fans',
-        'Air & Water Balancing (TAB), Commissioning & Indoor Air Quality Audits',
-      ],
-      completedProjects: [
-        {
-          name: 'Jebel Ali Community Estate',
-          location: 'Jebel Ali, Dubai',
-          developer: 'Nakheel',
-          type: 'HVAC & Ductwork Infrastructure',
-          image: '/resedential.png',
-        },
-        {
-          name: 'Opal Luxury Residences',
-          location: 'District 11, Dubai',
-          developer: 'Meydan',
-          type: 'Smart VRF Climate Control',
-          image: '/images/opalgardens2.jpg',
-        },
-      ],
-    },
-  ];
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -199,8 +85,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const activeScope = scopeDetails[activeScopeTab];
 
   return (
     <div className="w-full bg-[#f8fafc] min-h-screen text-[#0F172A]">
@@ -293,124 +177,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                   <div className="absolute bottom-3 right-3 z-20 bg-black/70 text-white font-technical-data text-[11px] px-3.5 py-1.5 border border-white/20 backdrop-blur-sm">
                     SEC.{servicesList[activeIndex].id}
                   </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Interactive Scope of Work & Completed Projects Showcase */}
-        <section className="w-full py-20 px-margin-edge bg-white border-b border-outline-variant">
-          <div className="max-w-[1440px] mx-auto">
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b border-outline-variant pb-6">
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-2 h-2 bg-[#E90046]"></div>
-                  <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-[0.25em] font-semibold">
-                    TECHNICAL PORTFOLIO &amp; DELIVERABLES
-                  </span>
-                </div>
-                <h2 className="font-headline-lg text-3xl md:text-4xl text-[#0F172A] font-bold tracking-tight">
-                  Scope of Work &amp; Project References
-                </h2>
-              </div>
-              <p className="font-body-md text-xs md:text-sm text-on-surface-variant max-w-md leading-relaxed">
-                Detailed scope specifications and verified project deliveries for each of our engineering disciplines.
-              </p>
-            </div>
-
-            {/* Service Navigation Tabs */}
-            <div className="flex flex-wrap gap-2 md:gap-4 mb-12 border-b border-outline-variant pb-4">
-              {scopeDetails.map((tab, idx) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveScopeTab(idx)}
-                  className={`px-5 py-3 font-technical-data text-xs md:text-sm uppercase tracking-wider transition-all cursor-pointer border ${activeScopeTab === idx
-                      ? 'bg-[#0F172A] text-white border-[#0F172A] font-semibold shadow-md'
-                      : 'bg-[#f8fafc] text-on-surface-variant border-outline-variant hover:border-[#E90046] hover:text-[#0F172A]'
-                    }`}
-                >
-                  <span className="text-[#E90046] mr-2 font-bold">{tab.tag.split(' ')[0]}</span>
-                  {tab.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Active Service Showcase Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start transition-opacity duration-500">
-
-              {/* Left Side: Scope of Work Checklist (5 Cols) */}
-              <div className="lg:col-span-5 bg-[#f8fafc] border border-outline-variant p-5 sm:p-6 md:p-8 relative shadow-sm">
-                <div className="absolute top-0 left-0 w-1 h-full bg-[#E90046]"></div>
-                <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-widest font-semibold block mb-2">
-                  {activeScope.tag}
-                </span>
-                <h3 className="font-headline-lg text-2xl text-[#0F172A] font-bold mb-6">
-                  Scope of Work
-                </h3>
-
-                <ul className="space-y-4">
-                  {activeScope.scopeItems.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 border-b border-outline-variant/60 pb-3 last:border-none">
-                      <span className="font-technical-data text-xs text-[#E90046] font-bold mt-0.5">
-                        {String(idx + 1).padStart(2, '0')}
-                      </span>
-                      <span className="font-body-md text-xs md:text-sm text-[#334155] leading-relaxed">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Right Side: Selected Completed Projects (7 Cols) */}
-              <div className="lg:col-span-7 flex flex-col gap-6">
-                <div className="flex items-center justify-between border-b border-outline-variant pb-3">
-                  <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-widest font-semibold">
-                    SELECTED COMPLETED PROJECTS
-                  </span>
-                  <span className="font-technical-data text-xs text-[#64748B]">
-                    {activeScope.name} Deliveries
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {activeScope.completedProjects.map((project, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white border border-outline-variant p-4 sm:p-5 hover:border-[#E90046] transition-colors shadow-sm flex flex-col justify-between group"
-                    >
-                      <div className="relative aspect-[16/10] overflow-hidden border border-outline-variant/60 mb-4 bg-surface-container-low">
-                        <img
-                          src={project.image}
-                          alt={project.name}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                        <div className="absolute top-2 left-2 bg-[#0F172A]/90 text-white px-2 py-0.5 font-technical-data text-[10px] font-semibold tracking-wider">
-                          PROJECT 0{idx + 1}
-                        </div>
-                      </div>
-
-                      <div>
-                        <span className="font-technical-data text-[11px] text-[#E90046] uppercase tracking-wider block mb-1 font-semibold">
-                          {project.type}
-                        </span>
-                        <h4 className="font-headline-md text-base text-[#0F172A] font-bold mb-2 leading-snug">
-                          {project.name}
-                        </h4>
-                        <div className="flex items-center gap-1.5 text-xs text-[#64748B] font-technical-data mb-1">
-                          <span className="material-symbols-outlined text-xs text-[#E90046]">location_on</span>
-                          <span>{project.location}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 text-xs text-[#64748B] font-technical-data">
-                          <span className="material-symbols-outlined text-xs">domain</span>
-                          <span>{project.developer}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
 

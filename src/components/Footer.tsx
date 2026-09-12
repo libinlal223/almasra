@@ -21,30 +21,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       title: "Company",
       links: [
         { label: "About Almasra", page: "about" },
-        { label: "Project Portfolio", page: "projects" },
+        { label: "Gallery", page: "projects" },
         { label: "Quality & Safety", page: "about" },
         { label: "Contact Us", page: "contact", pulse: true },
       ],
     },
   ];
 
-  const contactInfo = [
-    {
-      icon: <Mail size={16} className="text-[#E90046]" />,
-      text: "info.almasra@gmail.com",
-      page: "contact",
-    },
-    {
-      icon: <Phone size={16} className="text-[#E90046]" />,
-      text: "+971 (0) 4 123 4567",
-      page: "contact",
-    },
-    {
-      icon: <MapPin size={16} className="text-[#E90046]" />,
-      text: "Dubai Municipality, Al Fahidi, Dubai",
-      page: "contact",
-    },
-  ];
+
 
   return (
     <footer className="bg-[#0F172A] text-white relative h-fit overflow-hidden border-t border-outline-variant mt-auto">
@@ -106,16 +90,39 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Contact Reach
             </h4>
             <ul className="space-y-3.5 font-technical-data text-xs">
-              {contactInfo.map((item, i) => (
-                <li 
-                  key={i} 
-                  className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
-                  onClick={() => onNavigate(item.page)}
+              <li 
+                className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
+                onClick={() => onNavigate('contact')}
+              >
+                <Mail size={16} className="text-[#E90046] flex-shrink-0" />
+                <span>info.almasra@gmail.com</span>
+              </li>
+              <li className="flex items-start space-x-3 text-white/80">
+                <Phone size={16} className="text-[#E90046] flex-shrink-0 mt-1" />
+                <div className="flex flex-col space-y-1">
+                  <a href="tel:+9715627777400" className="hover:text-[#E90046] transition-colors">+971 56 277 7400</a>
+                  <a href="tel:+9715677773100" className="hover:text-[#E90046] transition-colors">+971 56 777 3100</a>
+                  <a href="tel:+971565454332" className="hover:text-[#E90046] transition-colors">+971 56 545 4332</a>
+                </div>
+              </li>
+              <li className="flex items-center space-x-3 text-[#25D366]">
+                <span className="material-symbols-outlined text-base text-[#25D366] flex-shrink-0">forum</span>
+                <a 
+                  href="https://wa.me/971565454332" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:underline font-semibold text-[#25D366]"
                 >
-                  {item.icon}
-                  <span>{item.text}</span>
-                </li>
-              ))}
+                  WhatsApp: +971 56 545 4332
+                </a>
+              </li>
+              <li 
+                className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
+                onClick={() => onNavigate('contact')}
+              >
+                <MapPin size={16} className="text-[#E90046] flex-shrink-0" />
+                <span>Dubai Municipality, Al Fahidi, Dubai</span>
+              </li>
             </ul>
           </div>
         </div>
