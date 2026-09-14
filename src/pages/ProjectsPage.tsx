@@ -1,69 +1,122 @@
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 import { ScrollReveal } from '../components/ui/ScrollReveal';
 
 interface ProjectsPageProps {
   onNavigate: (page: string) => void;
 }
 
-const numberedImages = [
-  '/images/all/1.png',
-  '/images/all/2.png',
-  '/images/all/3.png',
-  '/images/all/4.png',
-  '/images/all/5.jpg',
-  '/images/all/6.jpg',
-  '/images/all/7.png',
-  '/images/all/8.jpeg',
-  '/images/all/9.jpeg',
-  '/images/all/10.png',
-  '/images/all/11.jpeg',
-  '/images/all/12.jpeg',
-  '/images/all/13.png',
-];
+interface ProjectData {
+  id: string;
+  number: string;
+  name: string;
+  developer: string;
+  location: string;
+  category: string;
+  scope: string;
+  description?: string;
+  images: string[];
+}
 
-const unnumberedImages = [
-  '/images/all/ChatGPT Image Sep 12, 2026, 08_41_45 PM.png',
-  '/images/all/Screenshot 2026-09-12 230031.png',
-  '/images/all/Screenshot 2026-09-12 230045.png',
-  '/images/all/Screenshot 2026-09-12 230057.png',
-  '/images/all/Screenshot 2026-09-12 230123.png',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.47 (2).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.48 (1).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.49.jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.50 (2).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.52 (1).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.52 (2).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.53.jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.54 (1).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.54 (3).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.54.jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.55.jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.56 (1).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.57 (3).jpeg',
-  '/images/all/WhatsApp Image 2026-08-06 at 11.25.58.jpeg',
-  '/images/all/luury_villa.png',
-  '/images/all/rakprop.png',
-  '/images/all/resedential.png',
+const projectsList: ProjectData[] = [
+  {
+    id: 'cape-hayat',
+    number: '01',
+    name: 'CAPE HAYAT RESIDENTIAL PROJECT',
+    developer: 'RAK Properties',
+    location: 'Mina Al Arab, Ras Al Khaimah',
+    category: 'Luxury Residential Development',
+    scope: 'Electrical & Plumbing Works',
+    images: [
+      '/images/rakk/rakprop.png',
+      '/images/rakk/ChatGPT Image Sep 14, 2026, 09_49_45 AM.png',
+      '/images/rakk/ChatGPT Image Sep 14, 2026, 09_49_50 AM.png',
+      '/images/rakk/ChatGPT Image Sep 14, 2026, 09_49_54 AM.png',
+      '/images/rakk/ChatGPT Image Sep 14, 2026, 09_49_58 AM.png',
+      '/images/rakk/ChatGPT Image Sep 14, 2026, 09_50_28 AM.png',
+      '/images/rakk/ChatGPT Image Sep 14, 2026, 09_54_53 AM.png',
+      '/images/rakk/ChatGPT Image Sep 14, 2026, 09_55_15 AM.png',
+    ],
+  },
+  {
+    id: 'quattro-delmar',
+    number: '02',
+    name: 'QUATTRO DELMAR',
+    developer: 'RAK Properties',
+    location: 'Mina Al Arab, Ras Al Khaimah',
+    category: '1BR, 2BR, 3BR, Townhouses, Garden Houses & Penthouse',
+    scope: 'Complete Drainage & Water Supply Works',
+    images: [
+      '/images/QUATTRO DELMAR/1.jpeg',
+      '/images/QUATTRO DELMAR/12.jpeg',
+      '/images/QUATTRO DELMAR/8.jpeg',
+      '/images/QUATTRO DELMAR/9.jpeg',
+      '/images/QUATTRO DELMAR/WhatsApp Image 2026-08-06 at 11.25.47 (2).jpeg',
+      '/images/QUATTRO DELMAR/WhatsApp Image 2026-08-06 at 11.25.48 (1).jpeg',
+      '/images/QUATTRO DELMAR/WhatsApp Image 2026-08-06 at 11.25.49.jpeg',
+      '/images/QUATTRO DELMAR/WhatsApp Image 2026-08-06 at 11.25.50 (2).jpeg',
+      '/images/QUATTRO DELMAR/WhatsApp Image 2026-08-06 at 11.25.55.jpeg',
+      '/images/QUATTRO DELMAR/WhatsApp Image 2026-08-06 at 11.25.57 (3).jpeg',
+    ],
+  },
+  {
+    id: 'jebel-ali-village',
+    number: '03',
+    name: 'JEBEL ALI VILLAGE',
+    developer: 'Nakheel Properties',
+    location: 'Jebel Ali, Dubai',
+    category: '3 BHK, 4 BHK & 5 BHK Luxury Villas & Townhouses',
+    scope: 'Electrical & Plumbing Works',
+    images: [
+      '/images/Nakheel/luury_villa.png',
+      '/images/Nakheel/luxury townhouse.png',
+      '/images/Nakheel/1.png',
+      '/images/Nakheel/4.png',
+      '/images/Nakheel/10.png',
+      '/images/Nakheel/13.png',
+      '/images/Nakheel/ChatGPT Image Sep 12, 2026, 08_41_45 PM.png',
+      '/images/Nakheel/ChatGPT Image Sep 14, 2026, 10_02_33 AM.png',
+      '/images/Nakheel/ChatGPT Image Sep 14, 2026, 11_42_06 AM.png',
+    ],
+  },
+  {
+    id: 'opal-gardens',
+    number: '04',
+    name: 'DISTRICT 11 OPAL GARDENS',
+    developer: 'Nakheel Properties',
+    location: 'Mohammed Bin Rashid City (MBR City), Dubai',
+    category: 'Semi-Detached & Independent Luxury Villas',
+    scope: 'Electrical & Plumbing Works',
+    images: [
+      '/images/opal/opalgardens1.jpg',
+      '/images/opal/opalgardens2.jpg',
+      '/images/opal/opalgardens3.png',
+      '/images/opal/3.png',
+      '/images/opal/Screenshot 2026-09-12 230045.png',
+      '/images/opal/Screenshot 2026-09-12 230057.png',
+      '/images/opal/Screenshot 2026-09-12 230123.png',
+      '/images/opal/ChatGPT Image Sep 14, 2026, 11_57_02 AM.png',
+      '/images/opal/ChatGPT Image Sep 14, 2026, 11_59_31 AM.png',
+      '/images/opal/ChatGPT Image Sep 14, 2026, 12_01_31 PM.png',
+    ],
+  },
+  {
+    id: 'masa-residences',
+    number: '05',
+    name: 'MASA RESIDENCES',
+    developer: 'Durar Group',
+    location: 'Al Marjan Island, Ras Al Khaimah',
+    category: 'Luxury Island Residential Development',
+    scope: 'Slab Conduiting Works',
+    images: [
+      '/images/durar/ChatGPT Image Sep 14, 2026, 12_16_04 PM.png',
+      '/images/durar/ChatGPT Image Sep 14, 2026, 12_18_05 PM.png',
+      '/images/durar/ChatGPT Image Sep 14, 2026, 12_18_10 PM.png',
+    ],
+  },
 ];
-
-const shuffleArray = <T,>(array: T[]): T[] => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
-  const allImages = useMemo(() => {
-    return [...numberedImages, ...shuffleArray(unnumberedImages)];
-  }, []);
-
-  const col1 = useMemo(() => allImages.filter((_, i) => i % 4 === 0), [allImages]);
-  const col2 = useMemo(() => allImages.filter((_, i) => i % 4 === 1), [allImages]);
-  const col3 = useMemo(() => allImages.filter((_, i) => i % 4 === 2), [allImages]);
-  const col4 = useMemo(() => allImages.filter((_, i) => i % 4 === 3), [allImages]);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="w-full bg-[#f8fafc] text-[#0F172A] min-h-screen">
@@ -76,95 +129,109 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-2.5 h-2.5 bg-[#E90046]"></div>
                 <span className="font-technical-data text-xs text-white/70 uppercase tracking-[0.2em] font-semibold">
-                  ALMASRA GALLERY
+                  PROJECT PORTFOLIO
                 </span>
               </div>
               <h1 className="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 tracking-tight break-words">
                 Our Work in Focus
               </h1>
               <p className="font-body-lg text-white/80 max-w-2xl leading-relaxed">
-                Explore a visual collection of our MEP contracting work across the UAE, showcasing the quality, precision and technical expertise behind every project.
+                Detailed showcase of our premier MEP contracting projects across the UAE, featuring project descriptions, scope of works, and technical execution photos.
               </p>
             </ScrollReveal>
           </div>
         </section>
 
-        {/* Original Ratio 4-Column Layout (1..13 left-to-right, then randomized unnumbered images) */}
-        <section className="px-margin-edge py-16 max-w-[1440px] mx-auto">
-          {/* Desktop 4-Column Masonry (Original Ratios) */}
-          <div className="hidden lg:grid grid-cols-4 gap-6 items-start">
-            <div className="flex flex-col gap-6">
-              {col1.map((imgSrc, idx) => (
-                <ScrollReveal key={`${imgSrc}-c1-${idx}`} delay={0.05}>
-                  <div className="relative group cursor-pointer border border-outline-variant bg-white shadow-sm hover:border-[#E90046] transition-all overflow-hidden">
-                    <img
-                      className="w-full h-auto block group-hover:scale-105 transition-transform duration-700"
-                      alt="Almasra Project Delivery"
-                      src={imgSrc}
-                    />
+        {/* Project-Wise Section */}
+        <section className="px-margin-edge py-12 max-w-[1440px] mx-auto space-y-12">
+          {projectsList.map((project) => (
+            <ScrollReveal key={project.id}>
+              {/* Single Unified Project Section Card */}
+              <div className="bg-white border border-slate-200 shadow-md overflow-hidden relative group border-t-4 border-t-[#E90046] p-6 md:p-8">
+                {/* Header & Meta Row */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-[#0F172A] text-white font-mono text-xs px-2.5 py-1 font-bold tracking-wider uppercase">
+                      PROJECT {project.number}
+                    </span>
+                    <span className="text-[#E90046] font-semibold text-xs uppercase tracking-wider bg-rose-50 px-2.5 py-1 border border-rose-100">
+                      {project.developer}
+                    </span>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
-
-            <div className="flex flex-col gap-6">
-              {col2.map((imgSrc, idx) => (
-                <ScrollReveal key={`${imgSrc}-c2-${idx}`} delay={0.1}>
-                  <div className="relative group cursor-pointer border border-outline-variant bg-white shadow-sm hover:border-[#E90046] transition-all overflow-hidden">
-                    <img
-                      className="w-full h-auto block group-hover:scale-105 transition-transform duration-700"
-                      alt="Almasra Project Delivery"
-                      src={imgSrc}
-                    />
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-
-            <div className="flex flex-col gap-6">
-              {col3.map((imgSrc, idx) => (
-                <ScrollReveal key={`${imgSrc}-c3-${idx}`} delay={0.15}>
-                  <div className="relative group cursor-pointer border border-outline-variant bg-white shadow-sm hover:border-[#E90046] transition-all overflow-hidden">
-                    <img
-                      className="w-full h-auto block group-hover:scale-105 transition-transform duration-700"
-                      alt="Almasra Project Delivery"
-                      src={imgSrc}
-                    />
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-
-            <div className="flex flex-col gap-6">
-              {col4.map((imgSrc, idx) => (
-                <ScrollReveal key={`${imgSrc}-c4-${idx}`} delay={0.2}>
-                  <div className="relative group cursor-pointer border border-outline-variant bg-white shadow-sm hover:border-[#E90046] transition-all overflow-hidden">
-                    <img
-                      className="w-full h-auto block group-hover:scale-105 transition-transform duration-700"
-                      alt="Almasra Project Delivery"
-                      src={imgSrc}
-                    />
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile & Tablet Layout */}
-          <div className="grid lg:hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-start">
-            {allImages.map((imgSrc, idx) => (
-              <ScrollReveal key={`mob-${imgSrc}-${idx}`} delay={(idx % 2) * 0.05}>
-                <div className="relative group cursor-pointer border border-outline-variant bg-white shadow-sm hover:border-[#E90046] transition-all overflow-hidden">
-                  <img
-                    className="w-full h-auto block group-hover:scale-105 transition-transform duration-700"
-                    alt={`Almasra Project Delivery ${idx + 1}`}
-                    src={imgSrc}
-                  />
+                  <span className="text-xs font-mono text-slate-500 flex items-center gap-1">
+                    <span className="material-symbols-outlined text-sm text-[#E90046]">location_on</span>
+                    {project.location}
+                  </span>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+
+                {/* Title & Description inline */}
+                <div className="mb-4">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#0F172A] tracking-tight mb-2">
+                    {project.name}
+                  </h2>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs md:text-sm text-slate-600 bg-slate-50 p-3 border border-slate-100">
+                    <div>
+                      <span className="font-semibold text-slate-900">Scope/Units: </span>
+                      <span>{project.category}</span>
+                    </div>
+                    <div className="w-px h-4 bg-slate-300 hidden md:block"></div>
+                    <div>
+                      <span className="font-semibold text-slate-900">MEP Executed: </span>
+                      <span className="text-[#E90046] font-semibold">{project.scope}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Images Gallery - Seamless Uniform Grid (Zero Gaps) */}
+                <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+                  {project.images.map((imgSrc, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => setSelectedImage(imgSrc)}
+                      className="group/img relative cursor-pointer overflow-hidden bg-slate-900 border border-slate-200 aspect-[4/3] shadow-sm hover:border-[#E90046] transition-all duration-300"
+                    >
+                      <img
+                        src={imgSrc}
+                        alt={`${project.name} photo ${idx + 1}`}
+                        className="w-full h-full object-cover group-hover/img:scale-108 transition-transform duration-500 opacity-95 group-hover/img:opacity-100"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <span className="text-white text-xs font-semibold flex items-center gap-1.5 bg-[#E90046] px-2.5 py-1 shadow">
+                          <span className="material-symbols-outlined text-sm">zoom_in</span>
+                          Zoom Photo
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
         </section>
+
+        {/* Lightbox Image Modal */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+              <img
+                src={selectedImage}
+                alt="Enlarged project photo"
+                className="max-w-full max-h-[85vh] object-contain border border-white/20 shadow-2xl"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-10 right-0 text-white hover:text-[#E90046] transition-colors flex items-center gap-1 text-sm font-semibold"
+              >
+                <span className="material-symbols-outlined text-2xl">close</span>
+                Close
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Call to Action */}
         <section className="bg-[#0F172A] text-white py-20 px-margin-edge relative overflow-hidden">
@@ -196,3 +263,4 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
     </div>
   );
 };
+
