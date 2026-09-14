@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       title: "Company",
       links: [
         { label: "About Almasra", page: "about" },
-        { label: "Gallery", page: "projects" },
+        { label: "Projects", page: "projects" },
         { label: "Quality & Safety", page: "about" },
         { label: "Contact Us", page: "contact", pulse: true },
       ],
@@ -42,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               onClick={() => onNavigate('home')}
             >
               <img 
-                src="/logoorg.png" 
+                src="/logoorg.webp" 
                 alt="Almasra Logo" 
                 className="h-10 w-auto object-contain" 
               />

@@ -6,13 +6,13 @@ interface HomePageProps {
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
-  const expertiseImages = ['/S1.png', '/S2.png', '/S3.png', '/S4.png'];
+  const expertiseImages = ['/S1.webp', '/S2.webp', '/S3.webp', '/S4.webp'];
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
   const opalImages = [
-    '/images/opalgardens1.jpg',
-    '/images/opalgardens2.jpg',
-    '/images/opalgardens3.png',
+    '/images/opal/opalgardens1.webp',
+    '/images/opal/opalgardens2.webp',
+    '/images/opal/opalgardens3.webp',
   ];
   const [currentOpalImgIndex, setCurrentOpalImgIndex] = useState(0);
 
@@ -36,20 +36,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     <div className="w-full bg-white">
       {/* Main Content Area */}
       <main className="flex-grow flex flex-col relative w-full bg-white">
-        {/* 1. Hero: Responsive background image (Desktop: heropc.png, Mobile: heromob.png) */}
+        {/* 1. Hero: Responsive background image (Desktop: heropc.webp, Mobile: heromob.webp) */}
         <section className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-black">
           <div className="absolute inset-0 z-0">
             {/* Mobile Hero Image */}
             <img
               alt="Industrial MEP Infrastructure Mobile"
               className="w-full h-full object-cover block md:hidden"
-              src="/heromob.png"
+              src="/heromob.webp"
             />
             {/* Desktop Hero Image */}
             <img
               alt="Industrial MEP Infrastructure Desktop"
               className="w-full h-full object-cover hidden md:block"
-              src="/heropc.png"
+              src="/heropc.webp"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/40"></div>
           </div>
@@ -59,7 +59,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <ScrollReveal>
                 <div className="max-w-3xl">
                   <div className="flex items-center gap-2 mb-6">
-
                     <span className="font-label-caps text-xs text-white/80 uppercase tracking-widest">ALMASRA MEP CONTRACTING</span>
                   </div>
                   <h1 className="font-display-lg text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.15] md:leading-[1.1] font-bold break-words">
@@ -192,7 +191,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Commercial Sector */}
               <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/images/commercial1.png"
+                  src="/images/commercial1.webp"
                   alt="Commercial Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -206,7 +205,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Industrial Sector */}
               <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/images/industrial2.png"
+                  src="/images/industrial2.webp"
                   alt="Industrial Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -220,7 +219,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Luxury Villas Sector */}
               <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/images/all/2.png"
+                  src="/images/Nakheel/luury_villa.webp"
                   alt="Luxury Villas Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -234,7 +233,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Residential Sector */}
               <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-1 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/images/all/10.png"
+                  src="/images/Nakheel/10.webp"
                   alt="Residential Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -248,7 +247,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
         </section>
 
-        {/* Why Almasra Banner with /3d.png Image */}
+        {/* Why Almasra Banner with /3d.webp Image */}
         <section className="w-full bg-[#0f172a] border-b border-outline-variant py-16 relative overflow-hidden">
           <div className="max-w-[1440px] mx-auto px-margin-edge">
             <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -257,7 +256,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <img
                   alt="3D Technical MEP Systems Visualization"
                   className="relative z-10 w-full h-auto border border-white/10 shadow-2xl object-cover"
-                  src="/3d.png"
+                  src="/3d.webp"
                 />
               </div>
               <div className="w-full lg:w-[35%] flex flex-col justify-center">
@@ -458,7 +457,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-outline-variant pb-16">
                   <div className="lg:col-span-7 relative group overflow-hidden bg-surface-container-low border border-outline-variant">
                     <img
-                      src="/images/all/rakprop.png"
+                      src="/images/rakk/rakprop.webp"
                       alt="Cape Hyatt, Mina Al Arab"
                       className="w-full h-[260px] sm:h-[340px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -522,7 +521,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   </div>
                   <div className="lg:col-span-7 order-1 lg:order-2 relative group overflow-hidden bg-surface-container-low border border-outline-variant">
                     <img
-                      src="/images/all/2.png"
+                      src="/images/Nakheel/luxury townhouse.webp"
                       alt="Jebel Ali Village, Dubai"
                       className="w-full h-[260px] sm:h-[340px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />

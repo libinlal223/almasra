@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
     { id: 'home', label: 'HOME' },
     { id: 'about', label: 'ABOUT US' },
     { id: 'services', label: 'SERVICES' },
-    { id: 'projects', label: 'GALLERY' },
+    { id: 'projects', label: 'PROJECTS' },
     { id: 'contact', label: 'CONTACT' },
   ];
 
@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             onClick={(e) => handleNavClick(e, 'home')}
           >
             <img 
-              src="/logoorg.png" 
+              src="/logoorg.webp" 
               alt="Almasra Logo" 
               className="h-8 md:h-9.5 w-auto object-contain transition-transform hover:scale-105" 
             />

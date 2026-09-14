@@ -7,10 +7,10 @@ interface AboutPageProps {
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   const sectorImages = [
-    { src: '/commercial.png', label: 'Commercial Infrastructure' },
-    { src: '/images/industrial2.png', label: 'Industrial MEP Solutions' },
-    { src: '/images/resedential/resedential.png', label: 'Residential Developments' },
-    { src: '/images/resedential/luury_villa.png', label: 'Luxury Villa Projects' },
+    { src: '/images/commercial1.webp', label: 'Commercial Infrastructure' },
+    { src: '/images/industrial2.webp', label: 'Industrial MEP Solutions' },
+    { src: '/images/Nakheel/10.webp', label: 'Residential Developments' },
+    { src: '/images/Nakheel/luury_villa.webp', label: 'Luxury Villa Projects' },
   ];
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -303,7 +303,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                       {/* Unboxed Logo */}
                       <div className="h-16 sm:h-20 max-w-[180px] flex items-center justify-end">
                         <img
-                          src="/alfareeq.jpg"
+                          src="/alfareeq.webp"
                           alt="Alfareeq Alnader Technical Services LLC Logo"
                           className="max-h-full w-auto object-contain transition-all duration-300"
                         />
@@ -385,7 +385,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                         </div>
                         <div className="h-12 max-w-[130px] flex items-center justify-end">
                           <img
-                            src="/bait al mulouck.jpg"
+                            src="/bait al mulouck.webp"
                             alt="Bait Al Mulouk Technical Services Logo"
                             className="max-h-full w-auto object-contain transition-all duration-300"
                           />
@@ -449,7 +449,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                         </div>
                         <div className="h-12 max-w-[130px] flex items-center justify-end">
                           <img
-                            src="/alfareeq.jpg"
+                            src="/alfareeq.webp"
                             alt="Alfareeq Alnader Technical Services LLC Logo"
                             className="max-h-full w-auto object-contain transition-all duration-300"
                           />
@@ -531,7 +531,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   <div className="lg:col-span-2 flex flex-col items-start lg:items-end justify-between gap-4">
                     <div className="h-14 max-w-[150px] flex items-center justify-end">
                       <img
-                        src="/staffora.png"
+                        src="/staffora.webp"
                         alt="Staffora HR Consultancy Logo"
                         className="max-h-full w-auto object-contain transition-all duration-300"
                       />

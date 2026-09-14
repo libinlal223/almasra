@@ -20,7 +20,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
         'Indoor & Outdoor Lighting Systems',
         'Testing, Commissioning & Maintenance',
       ],
-      image: '/images/electrical service.png',
+      image: '/images/electrical service.webp',
       alt: 'Electrical Power Distribution & Systems',
     },
     {
@@ -34,7 +34,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
         'Central Water Filtration Systems',
         'Pump Room & Hydro-Pneumatic Systems',
       ],
-      image: '/images/plumbing service.png',
+      image: '/images/plumbing service.webp',
       alt: 'Plumbing & Drainage Engineering',
     },
     {
@@ -48,7 +48,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
         'Access Control & CCTV Surveillance',
         'Building Management Systems (BMS)',
       ],
-      image: '/images/fire service.png',
+      image: '/images/fire service.webp',
       alt: 'Fire Alarm & Low Current Systems',
     },
     {
@@ -62,7 +62,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
         'System Maintenance & Emergency Repair',
         'Ductwork & Air Distribution Solutions',
       ],
-      image: '/images/hvac service.png',
+      image: '/images/hvac service.webp',
       alt: 'HVAC Solutions & Climate Control',
     },
   ];
