@@ -32,8 +32,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
   return (
     <footer className="bg-[#0F172A] text-white relative h-fit overflow-hidden border-t border-outline-variant mt-auto">
-      <div className="max-w-[1440px] mx-auto p-5 sm:p-8 md:p-14 z-40 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 lg:gap-12 pb-10">
+      <div className="max-w-[1440px] mx-auto p-5 sm:p-8 md:p-14 pb-0 md:pb-0 z-40 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 lg:gap-12">
           
           {/* Brand section */}
           <div className="flex flex-col space-y-4">
@@ -126,19 +126,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
         </div>
+      </div>
 
-        <hr className="border-t border-white/10 my-6" />
+      {/* SVG Interactive Text Reveal Effect (ALMASRA) */}
+      <div className="lg:flex hidden h-[10rem] sm:h-[13rem] md:h-[16rem] mt-10 md:mt-14 -mb-4 md:-mb-6 justify-center items-center pointer-events-auto z-40 relative max-w-[1440px] mx-auto px-5">
+        <TextHoverEffect text="ALMASRA" className="z-40" />
+      </div>
 
-        {/* Footer bottom */}
+      {/* Footer bottom bar (placed below ALMASRA text) */}
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-14 pb-6 pt-0 z-40 relative">
+        <hr className="border-t border-white/10 mb-4" />
+
         <div className="flex flex-col md:flex-row justify-between items-center text-xs font-technical-data text-white/60 space-y-3 md:space-y-0">
           <p>© {new Date().getFullYear()} ALMASRA TECHNICAL SERVICES EST. ALL RIGHTS RESERVED.</p>
           <span className="text-[#E90046]">EXCEL PAR EXCELLENCE</span>
         </div>
-      </div>
-
-      {/* SVG Interactive Text Reveal Effect (ALMASRA) */}
-      <div className="lg:flex hidden h-[22rem] -mt-44 -mb-28 justify-center items-center pointer-events-auto z-50">
-        <TextHoverEffect text="ALMASRA" className="z-50" />
       </div>
 
       <FooterBackgroundGradient />

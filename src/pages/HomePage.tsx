@@ -219,7 +219,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Luxury Villas Sector */}
               <div className="bg-surface p-6 md:p-8 border border-outline-variant row-span-2 flex flex-col justify-end relative overflow-hidden group shadow-sm">
                 <img
-                  src="/images/Nakheel/luury_villa.webp"
+                  src="/images/Nakheel/luxury townhouse.webp"
                   alt="Luxury Villas Sector"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -436,8 +436,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 border-b border-outline-variant pb-8">
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 bg-[#E90046]"></div>
-                    <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-[0.25em] font-semibold">
+                    <div className="w-2.5 h-2.5 bg-[#E90046]"></div>
+                    <span className="font-technical-data text-sm md:text-base text-[#E90046] uppercase tracking-[0.2em] font-bold">
                       SIGNATURE IMPLEMENTATIONS
                     </span>
                   </div>
@@ -466,7 +466,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     </div>
                   </div>
                   <div className="lg:col-span-5 flex flex-col justify-center">
-                    <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-widest font-semibold mb-3">
+                    <span className="font-technical-data text-sm md:text-base text-[#E90046] uppercase tracking-widest font-bold mb-3">
                       RESIDENTIAL &bull; MEP CONTRACTING
                     </span>
                     <h3 className="font-headline-lg text-3xl md:text-4xl text-on-surface font-bold mb-4 leading-tight">
@@ -496,7 +496,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <ScrollReveal>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-outline-variant pb-16">
                   <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
-                    <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-widest font-semibold mb-3">
+                    <span className="font-technical-data text-sm md:text-base text-[#E90046] uppercase tracking-widest font-bold mb-3">
                       TOWNHOUSE COMMUNITY &bull; MEP SERVICES
                     </span>
                     <h3 className="font-headline-lg text-3xl md:text-4xl text-on-surface font-bold mb-4 leading-tight">
@@ -561,7 +561,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     </div>
                   </div>
                   <div className="lg:col-span-5 flex flex-col justify-center">
-                    <span className="font-technical-data text-xs text-[#E90046] uppercase tracking-widest font-semibold mb-3">
+                    <span className="font-technical-data text-sm md:text-base text-[#E90046] uppercase tracking-widest font-bold mb-3">
                       EXCLUSIVE VILLA ESTATE &bull; HIGH-SPEC MEP
                     </span>
                     <h3 className="font-headline-lg text-3xl md:text-4xl text-on-surface font-bold mb-4 leading-tight">
