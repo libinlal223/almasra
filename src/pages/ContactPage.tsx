@@ -6,10 +6,30 @@ interface ContactPageProps {
 }
 
 export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigate }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    phone: '',
+    email: '',
+    service: 'Electrical Services',
+    scope: ''
+  });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Format WhatsApp prefilled message
+    const message = `*NEW MEP INQUIRY - ALMASRA*\n\n` +
+      `👤 *Name:* ${formData.name}\n` +
+      `🏢 *Company:* ${formData.company || 'Not Specified'}\n` +
+      `📞 *Phone:* ${formData.phone}\n` +
+      `✉️ *Email:* ${formData.email}\n` +
+      `⚙️ *Service Required:* ${formData.service}\n\n` +
+      `📋 *Project Scope / Details:*\n${formData.scope || 'No specific notes provided.'}`;
+
+    const waUrl = `https://wa.me/971565454332?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, '_blank');
     setSubmitted(true);
   };
 
@@ -182,6 +202,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                               className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors"
                               placeholder="Enter your full name"
                               type="text"
+                              value={formData.name}
+                              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                               required
                             />
                           </div>
@@ -193,6 +215,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                               className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors"
                               placeholder="Enter company name"
                               type="text"
+                              value={formData.company}
+                              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                             />
                           </div>
                         </div>
@@ -206,6 +230,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                               className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors font-technical-data"
                               placeholder="+971 -- --- ----"
                               type="tel"
+                              value={formData.phone}
+                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                               required
                             />
                           </div>
@@ -217,6 +243,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                               className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors font-technical-data"
                               placeholder="email@domain.com"
                               type="email"
+                              value={formData.email}
+                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               required
                             />
                           </div>
@@ -226,13 +254,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                           <label className="font-technical-data text-xs text-[#475569] uppercase font-semibold mb-2">
                             Primary Service Required
                           </label>
-                          <select className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors cursor-pointer appearance-none">
-                            <option value="Electrical">Electrical Services</option>
-                            <option value="Plumbing">Plumbing Services</option>
-                            <option value="Fire & Low Current">Fire &amp; Low Current Systems</option>
-                            <option value="HVAC">HVAC Solutions</option>
-                            <option value="Turnkey MEP">Full Turnkey MEP Contracting</option>
-                            <option value="AMC">Annual Maintenance Contract (AMC)</option>
+                          <select 
+                            value={formData.service}
+                            onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                            className="bg-[#f8fafc] border border-outline-variant px-4 py-3 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors cursor-pointer appearance-none"
+                          >
+                            <option value="Electrical Services">Electrical Services</option>
+                            <option value="Plumbing Services">Plumbing Services</option>
+                            <option value="Fire & Low Current Systems">Fire &amp; Low Current Systems</option>
+                            <option value="HVAC Solutions">HVAC Solutions</option>
+                            <option value="Full Turnkey MEP Contracting">Full Turnkey MEP Contracting</option>
+                            <option value="Annual Maintenance Contract (AMC)">Annual Maintenance Contract (AMC)</option>
                           </select>
                         </div>
 
@@ -243,15 +275,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                           <textarea
                             className="bg-[#f8fafc] border border-outline-variant p-4 text-sm text-[#0F172A] font-body-md focus:border-[#E90046] focus:bg-white outline-none transition-colors h-36 resize-none"
                             placeholder="Provide details regarding project location, capacity, timeline and technical constraints..."
+                            value={formData.scope}
+                            onChange={(e) => setFormData({ ...formData, scope: e.target.value })}
                           ></textarea>
                         </div>
 
                         <button
-                          className="bg-[#E90046] text-white font-label-caps text-label-caps px-8 py-4 uppercase tracking-widest hover:bg-[#C4003B] transition-colors rounded-none w-full cursor-pointer shadow-md flex items-center justify-center gap-2 font-bold"
+                          className="bg-[#25D366] hover:bg-[#1fa851] text-white font-label-caps text-label-caps px-8 py-4 uppercase tracking-widest transition-colors rounded-none w-full cursor-pointer shadow-md flex items-center justify-center gap-2 font-bold"
                           type="submit"
                         >
-                          Send Technical Enquiry
-                          <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                          Send Inquiry via WhatsApp
+                          <span className="material-symbols-outlined text-sm">forum</span>
                         </button>
                       </form>
                     )}
