@@ -54,9 +54,11 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           <div className="hidden md:flex space-x-7 items-center ml-auto mr-8">
             {navLinks.map((link) => {
               const isActive = currentPage === link.id;
+              const href = link.id === 'home' ? '/' : `#${link.id}`;
               return (
                 <a
                   key={link.id}
+                  href={href}
                   onClick={(e) => handleNavClick(e, link.id)}
                   className={`font-label-caps text-[11px] md:text-xs uppercase tracking-[0.14em] cursor-pointer transition-colors duration-200 ${
                     isActive
@@ -92,17 +94,21 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
         {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-[#0F172A] border-b border-white/20 px-margin-edge py-5 flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                className={`font-label-caps uppercase text-xs py-1.5 ${
-                  currentPage === link.id ? 'text-white font-bold border-b border-[#E90046]' : 'text-white/75'
-                }`}
-                onClick={(e) => handleNavClick(e, link.id)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const href = link.id === 'home' ? '/' : `#${link.id}`;
+              return (
+                <a
+                  key={link.id}
+                  href={href}
+                  className={`font-label-caps uppercase text-xs py-1.5 ${
+                    currentPage === link.id ? 'text-white font-bold border-b border-[#E90046]' : 'text-white/75'
+                  }`}
+                  onClick={(e) => handleNavClick(e, link.id)}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             <button 
               className="bg-[#E90046] text-white font-label-caps text-[11px] px-5 py-2.5 uppercase tracking-widest w-full mt-2 hover:bg-[#C4003B] transition-colors"
               onClick={() => {

@@ -70,7 +70,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 {section.links.map((link) => (
                   <li key={link.label} className="relative">
                     <a
-                      onClick={() => onNavigate(link.page)}
+                      href={link.page === 'home' ? '/' : `#${link.page}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavigate(link.page);
+                      }}
                       className="text-white/70 hover:text-white transition-colors cursor-pointer"
                     >
                       {link.label}

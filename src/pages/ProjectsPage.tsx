@@ -120,7 +120,7 @@ const projectsList: ProjectData[] = [
 ];
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
     <div className="w-full bg-[#f8fafc] text-[#0F172A] min-h-screen">
@@ -163,51 +163,59 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                     </span>
                   </div>
                   <span className="text-xs font-mono text-slate-500 flex items-center gap-1">
-                    <span className="material-symbols-outlined text-sm text-[#E90046]">location_on</span>
+                    <span className="material-symbols-outlined text-sm">location_on</span>
                     {project.location}
                   </span>
                 </div>
 
-                {/* Title & Description inline */}
-                <div className="mb-4">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#0F172A] tracking-tight mb-2">
-                    {project.name}
-                  </h2>
-                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs md:text-sm text-slate-600 bg-slate-50 p-3 border border-slate-100">
-                    <div>
-                      <span className="font-semibold text-slate-900">Scope/Units: </span>
-                      <span>{project.category}</span>
-                    </div>
-                    <div className="w-px h-4 bg-slate-300 hidden md:block"></div>
-                    <div>
-                      <span className="font-semibold text-slate-900">MEP Executed: </span>
-                      <span className="text-[#E90046] font-semibold">{project.scope}</span>
-                    </div>
-                  </div>
+                {/* Project Title */}
+                <h2 className="font-headline-lg text-xl sm:text-2xl md:text-3xl font-bold text-[#0F172A] tracking-tight mb-2">
+                  {project.name}
+                </h2>
+
+                {/* Subtitle / Scope Badge Row */}
+                <div className="flex flex-wrap gap-2 text-xs font-technical-data mb-4">
+                  <span className="bg-slate-100 text-slate-700 px-2.5 py-1 font-semibold border border-slate-200">
+                    Category: {project.category}
+                  </span>
+                  <span className="bg-slate-900 text-white px-2.5 py-1 font-semibold flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 bg-[#E90046] rounded-full"></span>
+                    Scope: {project.scope}
+                  </span>
                 </div>
 
-                {/* Images Gallery - Seamless Uniform Grid (Zero Gaps) */}
+                {/* Optional Project Description */}
+                {project.description && (
+                  <p className="text-sm font-body-md text-slate-600 mb-6 leading-relaxed max-w-4xl">
+                    {project.description}
+                  </p>
+                )}
+
+                {/* Project Image Gallery Grid */}
                 <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
-                  {project.images.map((imgSrc, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => setSelectedImage(imgSrc)}
-                      className="group/img relative cursor-pointer overflow-hidden bg-slate-900 border border-slate-200 aspect-[4/3] shadow-sm hover:border-[#E90046] transition-all duration-300"
-                    >
-                      <img
-                        src={imgSrc}
-                        alt={`${project.name} photo ${idx + 1}`}
-                        className="w-full h-full object-cover group-hover/img:scale-108 transition-transform duration-500 opacity-95 group-hover/img:opacity-100"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                        <span className="text-white text-xs font-semibold flex items-center gap-1.5 bg-[#E90046] px-2.5 py-1 shadow">
-                          <span className="material-symbols-outlined text-sm">zoom_in</span>
-                          Zoom Photo
-                        </span>
+                  {project.images.map((imgSrc, idx) => {
+                    const imgAlt = `${project.name} - ${project.scope} execution photo ${idx + 1}`;
+                    return (
+                      <div
+                        key={idx}
+                        onClick={() => setSelectedImage({ src: imgSrc, alt: imgAlt })}
+                        className="group/img relative cursor-pointer overflow-hidden bg-slate-900 border border-slate-200 aspect-[4/3] shadow-sm hover:border-[#E90046] transition-all duration-300"
+                      >
+                        <img
+                          src={imgSrc}
+                          alt={imgAlt}
+                          className="w-full h-full object-cover group-hover/img:scale-108 transition-transform duration-500 opacity-95 group-hover/img:opacity-100"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                          <span className="text-white text-xs font-semibold flex items-center gap-1.5 bg-[#E90046] px-2.5 py-1 shadow">
+                            <span className="material-symbols-outlined text-sm">zoom_in</span>
+                            Zoom Photo
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </ScrollReveal>
@@ -222,8 +230,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
           >
             <div className="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
               <img
-                src={selectedImage}
-                alt="Enlarged project photo"
+                src={selectedImage.src}
+                alt={selectedImage.alt}
                 className="max-w-full max-h-[85vh] object-contain border border-white/20 shadow-2xl"
               />
               <button
