@@ -47,35 +47,82 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Almasra Technical Services Est",
-      "alternateName": "Almasra MEP Engineering",
-      "url": "https://almasrauae.com/",
-      "logo": "https://almasrauae.com/logoorg.webp",
-      "image": "https://almasrauae.com/heropc.webp",
-      "description": "Almasra Technical Services Est provides turnkey Mechanical, Electrical, and Plumbing (MEP) engineering, HVAC, and contracting solutions across Dubai and the UAE.",
-      "telephone": "+971565454332",
-      "email": "info@almasrauae.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Room 9, Al Fahidi",
-        "addressLocality": "Dubai",
-        "addressRegion": "Dubai",
-        "addressCountry": "AE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "25.2605",
-        "longitude": "55.2973"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      "sameAs": [
-        "https://wa.me/971565454332"
-      ],
-      "priceRange": "$$"
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://almasrauae.com/#organization",
+          "name": "Almasra Technical Services Est",
+          "alternateName": ["Almasra MEP Contracting", "Almasra Engineering UAE"],
+          "url": "https://almasrauae.com/",
+          "logo": "https://almasrauae.com/logoorg.webp",
+          "image": "https://almasrauae.com/heropc.webp",
+          "description": "Almasra Technical Services Est is a leading turnkey MEP contracting and engineering firm in Dubai and UAE, providing commercial and residential HVAC, electrical, plumbing, firefighting, and low-current systems.",
+          "telephone": "+971565454332",
+          "email": "info@almasrauae.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Room 9, Al Fahidi",
+            "addressLocality": "Dubai",
+            "addressRegion": "Dubai",
+            "postalCode": "00000",
+            "addressCountry": "AE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 25.2605,
+            "longitude": 55.2973
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Dubai" },
+            { "@type": "City", "name": "Abu Dhabi" },
+            { "@type": "City", "name": "Sharjah" },
+            { "@type": "City", "name": "Ras Al Khaimah" },
+            { "@type": "Country", "name": "United Arab Emirates" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "MEP Engineering Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "HVAC Engineering & Installation",
+                  "description": "Central air conditioning, ventilation systems, VRF/VRV units, and air filtration."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Electrical Systems Contracting",
+                  "description": "Power distribution, lighting installation, LV panels, cable trays, and electrical maintenance."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Plumbing & Drainage Engineering",
+                  "description": "Water supply networks, sanitary drainage, rainwater harvesting, and booster pumps."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Fire Safety & Low Current Systems",
+                  "description": "Addressable fire alarms, emergency lighting, central battery systems, CCTV, access control, and BMS."
+                }
+              }
+            ]
+          },
+          "priceRange": "$$",
+          "sameAs": [
+            "https://wa.me/971565454332"
+          ]
+        }
+      ]
     }
     </script>
   </head>
