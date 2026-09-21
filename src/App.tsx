@@ -12,6 +12,19 @@ export function App() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Dynamic SEO Titles per page
+    const pageTitles: Record<string, string> = {
+      home: 'Almasra | MEP Engineering Solutions in UAE',
+      about: 'About Us | Almasra Technical Services Est - Dubai, UAE',
+      services: 'MEP Services | HVAC, Electrical & Plumbing Contracting UAE - Almasra',
+      projects: 'Projects & Portfolio | Almasra MEP Engineering UAE',
+      contact: 'Contact Almasra | MEP Contractors in Dubai, UAE',
+    };
+
+    if (pageTitles[currentPage]) {
+      document.title = pageTitles[currentPage];
+    }
   }, [currentPage]);
 
   const handleNavigate = (page: string) => {
