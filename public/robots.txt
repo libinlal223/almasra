@@ -1,0 +1,6 @@
+# robots.txt for almasrauae.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://almasrauae.com/sitemap.xml
