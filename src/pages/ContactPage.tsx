@@ -68,7 +68,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                           OFFICE LOCATION
                         </span>
                         <p className="font-body-md text-sm md:text-base text-[#0F172A] font-semibold leading-relaxed">
-                          Office No. 43, Dubai Municipality, Al Fahidi, Dubai, UAE
+                          Room 9 Dubai - Al Fahidi - Dubai Office
                         </p>
                       </div>
                     </div>
@@ -109,9 +109,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
                         <span className="font-technical-data text-xs text-[#64748B] uppercase tracking-wider block mb-1 font-semibold">
                           EMAIL &amp; WORKING HOURS
                         </span>
-                        <p className="font-technical-data text-sm text-[#0F172A] font-semibold mb-2">
-                          info.almasra@gmail.com
-                        </p>
+                        <a 
+                          href="mailto:info@almasrauae.com" 
+                          className="font-technical-data text-sm text-[#0F172A] hover:text-[#E90046] font-semibold mb-2 block transition-colors"
+                        >
+                          info@almasrauae.com
+                        </a>
 
                       </div>
                     </div>
@@ -308,7 +311,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate: _onNavigat
           </div>
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-[#E90046] text-sm">mail</span>
-            <span>info.almasra@gmail.com</span>
+            <a href="mailto:info@almasrauae.com" className="hover:text-[#E90046] transition-colors">info@almasrauae.com</a>
           </div>
           <a href="https://wa.me/971565454332" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-semibold hover:underline">
             <span className="material-symbols-outlined text-sm">forum</span>

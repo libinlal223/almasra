@@ -112,8 +112,9 @@ const projectsList: ProjectData[] = [
     scope: 'Slab Conduiting Works',
     images: [
       '/images/durar/ChatGPT Image Sep 14, 2026, 12_16_04 PM.webp',
-      '/images/durar/ChatGPT Image Sep 14, 2026, 12_18_05 PM.webp',
+      '/images/durar/ChatGPT Image Sep 14, 2026, 12_18_05 PM.png',
       '/images/durar/ChatGPT Image Sep 14, 2026, 12_18_10 PM.webp',
+      '/images/durar/ChatGPT Image Sep 17, 2026, 08_06_34 PM.png',
     ],
   },
 ];

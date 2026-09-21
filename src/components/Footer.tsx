@@ -90,12 +90,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Contact Reach
             </h4>
             <ul className="space-y-3.5 font-technical-data text-xs">
-              <li 
-                className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer"
-                onClick={() => onNavigate('contact')}
-              >
+              <li className="flex items-center space-x-3 text-white/80">
                 <Mail size={16} className="text-[#E90046] flex-shrink-0" />
-                <span>info.almasra@gmail.com</span>
+                <a href="mailto:info@almasrauae.com" className="hover:text-[#E90046] transition-colors">
+                  info@almasrauae.com
+                </a>
               </li>
               <li className="flex items-start space-x-3 text-white/80">
                 <Phone size={16} className="text-[#E90046] flex-shrink-0 mt-1" />
@@ -121,7 +120,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 onClick={() => onNavigate('contact')}
               >
                 <MapPin size={16} className="text-[#E90046] flex-shrink-0" />
-                <span>Dubai Municipality, Al Fahidi, Dubai</span>
+                <span>Room 9 Dubai - Al Fahidi - Dubai Office</span>
               </li>
             </ul>
           </div>
